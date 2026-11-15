@@ -115,7 +115,7 @@ B_\pm=
 \mathrm{Tr}(B_++B_-)=1.
 ```
 
-Hence $`\|B\|_1\leq1`$. The claim would be unjustified if this signed operator were treated as a density matrix without this step.
+Hence $`\Vert B\Vert _1\leq1`$. The claim would be unjustified if this signed operator were treated as a density matrix without this step.
 
 For a $`k`$-qubit density matrix $`\tau`$, Pauli Parseval gives
 
@@ -171,7 +171,7 @@ p_{a,-}(z)\geq(1-c_0)^s p_0(z).
 The chi-squared divergence consequently satisfies
 
 ```math
-\chi^2(p_{a,+}\|p_{a,-})
+\chi^2(p_{a,+}\Vert p_{a,-})
 \leq
 \frac{4}{(1-c_0)^s}
 \sum_zp_0(z)
@@ -185,7 +185,7 @@ Apply the triangle inequality in the real $`L_2`$ space with measure given by un
 
 ```math
 \mathbb E_{a_K}
-\chi^2(p_{a,+}\|p_{a,-})
+\chi^2(p_{a,+}\Vert p_{a,-})
 \leq
 \frac{4}{(1-c_0)^s}
 \left[
@@ -197,7 +197,7 @@ Apply the triangle inequality in the real $`L_2`$ space with measure given by un
 A_s(c_0)\left(\frac23\right)^k.
 ```
 
-For discrete distributions, relative entropy obeys $`D_{\mathrm{KL}}(p\|q)\leq\chi^2(p\|q)`$; this follows from $`\log x\leq x-1`$. The same argument applies to general POVM outcome measures by using their densities relative to the maximally mixed reference measure.
+For discrete distributions, relative entropy obeys $`D_{\mathrm{KL}}(p\Vert q)\leq\chi^2(p\Vert q)`$; this follows from $`\log x\leq x-1`$. The same argument applies to general POVM outcome measures by using their densities relative to the maximally mixed reference measure.
 
 Finally, average the marker pattern:
 
@@ -214,7 +214,7 @@ Including the marker record in the block outcome, and averaging the one fixed hi
 ```math
 \mathbb E_a
 D_{\mathrm{KL}}\!\left(
-P^{(s)}_{a,+}\middle\|P^{(s)}_{a,-}
+P^{(s)}_{a,+}\middle\Vert P^{(s)}_{a,-}
 \right)
 \leq A_s(c_0)\beta_s^n.
 ```
@@ -230,13 +230,13 @@ Instead, strengthen the learner by revealing the actual $`a`$ only at final clas
 Conditioned on $`a`$ and $`R`$, the blocks are independent: source specimens are independent, block measurements are preplanned, and no coherent system connects the blocks. The two augmented transcript laws $`\mathcal P_+`$ and $`\mathcal P_-`$ therefore obey
 
 ```math
-D_{\mathrm{KL}}(\mathcal P_+\|\mathcal P_-)
+D_{\mathrm{KL}}(\mathcal P_+\Vert \mathcal P_-)
 =
 \mathbb E_R
 \sum_{j=1}^{T(R)}
 \mathbb E_a
 D_{\mathrm{KL}}\!\left(
-P_{j,a,+}^{R}\middle\|P_{j,a,-}^{R}
+P_{j,a,+}^{R}\middle\Vert P_{j,a,-}^{R}
 \right)
 \leq
 \mathbb E_R
@@ -281,7 +281,7 @@ A_s(c_0)\beta_s^n
 Since $`\sum_js_j(R)\leq N`$ for each seed, the augmented transcript satisfies the single budget bound
 
 ```math
-D_{\mathrm{KL}}(\mathcal P_+\|\mathcal P_-)
+D_{\mathrm{KL}}(\mathcal P_+\Vert \mathcal P_-)
 \leq
 N\,\frac{A_b(c_0)}{b}\,\beta_b^n.
 ```
@@ -300,7 +300,7 @@ Pinsker's inequality and the budget bound give
 \mathrm{TV}(\mathcal P_+,\mathcal P_-)
 \leq
 \sqrt{\frac12
-D_{\mathrm{KL}}(\mathcal P_+\|\mathcal P_-)}
+D_{\mathrm{KL}}(\mathcal P_+\Vert \mathcal P_-)}
 \leq
 \sqrt{
 \frac{NA_b(c_0)\beta_b^n}{2b}

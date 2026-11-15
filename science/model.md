@@ -87,7 +87,7 @@ Thus the source is fully separable. Its preparation can sample $`n-1`$ fair sign
 For $`n\geq2`$, every proper payload marginal is maximally mixed, independent of $`c`$. The contrast appears in a full-support correlation. However, its magnitude is not exponentially small in trace distance:
 
 ```math
-\frac12\|\omega_{a,c}-\omega_{a,c'}\|_1
+\frac12\Vert \omega_{a,c}-\omega_{a,c'}\Vert _1
 =\frac{|c-c'|}{2},
 \qquad
 \mathrm{Tr}(P_a\sigma_{a,c})=c.

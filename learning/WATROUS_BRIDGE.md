@@ -80,7 +80,7 @@ Watrous's classical Pinsker inequality therefore becomes, with natural logarithm
 
 ```math
 \mathrm{TV}(p,r)\leq
-\sqrt{\frac12D_{\mathrm{KL}}(p\|r)}.
+\sqrt{\frac12D_{\mathrm{KL}}(p\Vert r)}.
 ```
 
 This conversion matters for finite constants. The proof's final information bound concerns classical records, so it does not require a quantum relative-entropy theorem.
