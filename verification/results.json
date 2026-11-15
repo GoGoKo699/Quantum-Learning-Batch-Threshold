@@ -1,0 +1,488 @@
+{
+  "checked_at_utc": "2026-11-15T08:45:02.254052+00:00",
+  "deterministic_seed": 20261115,
+  "diagnostic_scope": {
+    "absolute_tolerance": 3e-11,
+    "exact": "Binary stabilizer enumeration and rational binomial identities at the listed sizes",
+    "not_established": [
+      "Universal or asymptotic theorem validity by testing",
+      "Literature priority or independent expert verification",
+      "Physical hardware behavior, noise tolerance or full learning runtime",
+      "Arbitrary-size collective POVM enumeration"
+    ],
+    "numerical": "Explicit raw matrix/operator, Born-law, odd-Pauli and joint-POVM checks at the listed small dimensions",
+    "sampling_note": "Random matrices use a fixed seed. No end-to-end experiment Monte Carlo is presented; decoded Bernoulli laws are checked directly from explicit Born probabilities."
+  },
+  "duration_seconds": 0.21638770799836493,
+  "input_sha256": {
+    "science/README.md": "f2e0d3f8e84e9f4f04dff06ff9d1f9a15d5a7e67f7efe514207e9164aeb20b9f",
+    "science/attaining_measurements.md": "8a3ad4557797ff43a7a1862d07f23b90618d7e32bd150552723a800cbb425256",
+    "science/collective_converse.md": "2a7ed27a9f0d958c99e46f863992614edc945dad8b38f5f95b15ff53857ffd81",
+    "science/model.md": "8ed2242cc7a4fb73bd29408b346d0f0664485c864d915620d9ffc370b32cc296",
+    "science/phase_boundary.md": "0f287a92e67e5ad4dfef308a5b6bdb5ca31cdfa411fd13cba2d58ec6542e0cad",
+    "science/resources.md": "70ed8eab09dc7f4247712d0e6dba9830a20f57e85db7a1bf9719a87874695ddc",
+    "science/worked_example.md": "8718c9b95be2e3d2c13a0411d54f07abae6bc3b4c3b71873a515553e30bd4f47",
+    "verification/check_science.py": "59b9440304df9ca9e51620b54180053fc495c682abf3709d1ce8cfac91498ea4"
+  },
+  "passed": true,
+  "schema_version": 1,
+  "software": {
+    "numpy": "2.3.5",
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+    "python": "3.12.14"
+  },
+  "tests": [
+    {
+      "cases": 12,
+      "counts": {
+        "1": 1,
+        "2": 3,
+        "3": 4,
+        "4": 9,
+        "5": 16,
+        "6": 33,
+        "7": 64,
+        "8": 129,
+        "9": 256,
+        "10": 513,
+        "11": 1024,
+        "12": 2049
+      },
+      "duration_seconds": 0.010538916001678444,
+      "method": "Independent binary symplectic enumeration of star-generator products",
+      "name": "binary_symplectic_ghz_counts",
+      "passed": true
+    },
+    {
+      "cases": 154,
+      "covered_raw_operator_cases": 66,
+      "duration_seconds": 0.06437442300011753,
+      "even_all_z_cases": 3,
+      "local_clifford_cases": 32,
+      "max_absolute_residual": 3.3306690738754696e-15,
+      "method": "Raw H/CNOT circuit and Kronecker Pauli matrices versus parity decoder; direct Born probabilities",
+      "name": "raw_ghz_operators_and_sign_decoder",
+      "passed": true,
+      "sizes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "uncovered_diagonal_cases": 56,
+      "y_at_first_site_cases": 31
+    },
+    {
+      "arithmetic": "fractions.Fraction exact rational",
+      "batch_values": [
+        1,
+        2,
+        3,
+        5,
+        7
+      ],
+      "cases": 240,
+      "duration_seconds": 0.028040848999808077,
+      "method": "Binomial average of independently enumerated stabilizer counts versus generating-function closed form",
+      "n_values": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "name": "exact_rational_binomial_coverage",
+      "negative_third_base_cases": 12,
+      "passed": true,
+      "q_values": [
+        "1/5",
+        "1/2",
+        "3/4",
+        "5/6"
+      ]
+    },
+    {
+      "cases": 9,
+      "duration_seconds": 0.0009799899999052286,
+      "method": "Raw tensor Pauli operators in an independently constructed parity/complement basis",
+      "name": "odd_tensor_pauli_representation",
+      "passed": true,
+      "rows": [
+        {
+          "multiplicity": 1,
+          "odd_copies": 1,
+          "residuals": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0
+          }
+        },
+        {
+          "multiplicity": 4,
+          "odd_copies": 3,
+          "residuals": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0
+          }
+        },
+        {
+          "multiplicity": 16,
+          "odd_copies": 5,
+          "residuals": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "cases": 73,
+      "configurations": [
+        {
+          "block_size": 1,
+          "n": 1,
+          "unknown_sites": []
+        },
+        {
+          "block_size": 1,
+          "n": 1,
+          "unknown_sites": [
+            0
+          ]
+        },
+        {
+          "block_size": 1,
+          "n": 2,
+          "unknown_sites": [
+            0
+          ]
+        },
+        {
+          "block_size": 1,
+          "n": 2,
+          "unknown_sites": [
+            0,
+            1
+          ]
+        },
+        {
+          "block_size": 3,
+          "n": 2,
+          "unknown_sites": []
+        },
+        {
+          "block_size": 3,
+          "n": 2,
+          "unknown_sites": [
+            0
+          ]
+        },
+        {
+          "block_size": 3,
+          "n": 2,
+          "unknown_sites": [
+            0,
+            1
+          ]
+        },
+        {
+          "block_size": 2,
+          "n": 3,
+          "unknown_sites": [
+            0,
+            2
+          ]
+        }
+      ],
+      "duration_seconds": 0.010979578997648787,
+      "max_response_to_bound_ratio": 0.7002969721690533,
+      "method": "Raw subset-Pauli expectations of random complex pure block effects; explicit Bell-state signed known-site reduction",
+      "name": "odd_subset_response_and_signed_reduction",
+      "passed": true,
+      "signed_reduction_eigenvalues": [
+        -0.4999999999999999,
+        0.4999999999999999
+      ]
+    },
+    {
+      "cases": 20,
+      "duration_seconds": 0.08696231599969906,
+      "max_block_hilbert_dimension": 64,
+      "max_chi_to_bound_ratio": 0.0030741194785684186,
+      "method": "Direct tensor density matrices and independently normalized random general joint POVMs; enumerate unresolved axes at finite +/- contrast",
+      "name": "finite_contrast_general_joint_povm_kl",
+      "outcomes_per_povm": 5,
+      "passed": true,
+      "povm_configurations": 10,
+      "rows": [
+        {
+          "analytic_bound": 5.55787037037037,
+          "averaged_chi_squared": 0.007403364116000971,
+          "averaged_kl": 0.0037386961771849244,
+          "block_size": 3,
+          "chi_to_bound_ratio": 0.0013320505198302455,
+          "contrast": 0.25,
+          "max_probability_normalization_residual": 6.661338147750939e-16,
+          "n": 1,
+          "unknown_sites": []
+        },
+        {
+          "analytic_bound": 461.71021720116636,
+          "averaged_chi_squared": 0.06353883651079933,
+          "averaged_kl": 0.03323312026501678,
+          "block_size": 3,
+          "chi_to_bound_ratio": 0.0001376162669649469,
+          "contrast": 0.65,
+          "max_probability_normalization_residual": 1.1102230246251565e-15,
+          "n": 1,
+          "unknown_sites": []
+        },
+        {
+          "analytic_bound": 3.705246913580247,
+          "averaged_chi_squared": 0.006126162715918613,
+          "averaged_kl": 0.003051802768948145,
+          "block_size": 3,
+          "chi_to_bound_ratio": 0.00165337502703676,
+          "contrast": 0.25,
+          "max_probability_normalization_residual": 1.1102230246251565e-15,
+          "n": 1,
+          "unknown_sites": [
+            0
+          ]
+        },
+        {
+          "analytic_bound": 307.8068114674442,
+          "averaged_chi_squared": 0.044980610118956446,
+          "averaged_kl": 0.0221348238673187,
+          "block_size": 3,
+          "chi_to_bound_ratio": 0.0001461326014993463,
+          "contrast": 0.65,
+          "max_probability_normalization_residual": 1.2212453270876722e-15,
+          "n": 1,
+          "unknown_sites": [
+            0
+          ]
+        },
+        {
+          "analytic_bound": 1.7777777777777777,
+          "averaged_chi_squared": 0.005465101295232744,
+          "averaged_kl": 0.002740313048445856,
+          "block_size": 2,
+          "chi_to_bound_ratio": 0.0030741194785684186,
+          "contrast": 0.25,
+          "max_probability_normalization_residual": 5.551115123125783e-16,
+          "n": 2,
+          "unknown_sites": []
+        },
+        {
+          "analytic_bound": 55.18367346938775,
+          "averaged_chi_squared": 0.037158991868789244,
+          "averaged_kl": 0.01857767626353811,
+          "block_size": 2,
+          "chi_to_bound_ratio": 0.0006733693053145981,
+          "contrast": 0.65,
+          "max_probability_normalization_residual": 4.440892098500626e-16,
+          "n": 2,
+          "unknown_sites": []
+        },
+        {
+          "analytic_bound": 1.1851851851851851,
+          "averaged_chi_squared": 0.002142235061125235,
+          "averaged_kl": 0.001071970581024905,
+          "block_size": 2,
+          "chi_to_bound_ratio": 0.0018075108328244169,
+          "contrast": 0.25,
+          "max_probability_normalization_residual": 5.551115123125783e-16,
+          "n": 2,
+          "unknown_sites": [
+            0
+          ]
+        },
+        {
+          "analytic_bound": 36.789115646258495,
+          "averaged_chi_squared": 0.014548570251674865,
+          "averaged_kl": 0.007247599722357302,
+          "block_size": 2,
+          "chi_to_bound_ratio": 0.00039545854789131024,
+          "contrast": 0.65,
+          "max_probability_normalization_residual": 4.440892098500626e-16,
+          "n": 2,
+          "unknown_sites": [
+            0
+          ]
+        },
+        {
+          "analytic_bound": 0.7901234567901234,
+          "averaged_chi_squared": 0.0016099572617934161,
+          "averaged_kl": 0.0007982530077960313,
+          "block_size": 2,
+          "chi_to_bound_ratio": 0.0020376021594572923,
+          "contrast": 0.25,
+          "max_probability_normalization_residual": 5.551115123125783e-16,
+          "n": 2,
+          "unknown_sites": [
+            0,
+            1
+          ]
+        },
+        {
+          "analytic_bound": 24.526077097505667,
+          "averaged_chi_squared": 0.01123130712253366,
+          "averaged_kl": 0.005465981845336706,
+          "block_size": 2,
+          "chi_to_bound_ratio": 0.0004579332878178018,
+          "contrast": 0.65,
+          "max_probability_normalization_residual": 8.881784197001252e-16,
+          "n": 2,
+          "unknown_sites": [
+            0,
+            1
+          ]
+        },
+        {
+          "analytic_bound": 5.55787037037037,
+          "averaged_chi_squared": 6.215600807007948e-05,
+          "averaged_kl": 3.1098010047642425e-05,
+          "block_size": 3,
+          "chi_to_bound_ratio": 1.1183421693575317e-05,
+          "contrast": 0.25,
+          "max_probability_normalization_residual": 8.881784197001252e-16,
+          "n": 2,
+          "unknown_sites": []
+        },
+        {
+          "analytic_bound": 461.71021720116636,
+          "averaged_chi_squared": 0.0002997546700993769,
+          "averaged_kl": 0.00015018167981771633,
+          "block_size": 3,
+          "chi_to_bound_ratio": 6.492268503747976e-07,
+          "contrast": 0.65,
+          "max_probability_normalization_residual": 8.881784197001252e-16,
+          "n": 2,
+          "unknown_sites": []
+        },
+        {
+          "analytic_bound": 3.705246913580247,
+          "averaged_chi_squared": 9.860910586395549e-05,
+          "averaged_kl": 4.9369229050298864e-05,
+          "block_size": 3,
+          "chi_to_bound_ratio": 2.661336967923497e-05,
+          "contrast": 0.25,
+          "max_probability_normalization_residual": 1.1102230246251565e-16,
+          "n": 2,
+          "unknown_sites": [
+            0
+          ]
+        },
+        {
+          "analytic_bound": 307.8068114674442,
+          "averaged_chi_squared": 0.0007267899840109603,
+          "averaged_kl": 0.0003638087428154224,
+          "block_size": 3,
+          "chi_to_bound_ratio": 2.361188761697792e-06,
+          "contrast": 0.65,
+          "max_probability_normalization_residual": 2.220446049250313e-16,
+          "n": 2,
+          "unknown_sites": [
+            0
+          ]
+        },
+        {
+          "analytic_bound": 2.470164609053498,
+          "averaged_chi_squared": 0.00013735641887745544,
+          "averaged_kl": 6.861618305705627e-05,
+          "block_size": 3,
+          "chi_to_bound_ratio": 5.560618040353465e-05,
+          "contrast": 0.25,
+          "max_probability_normalization_residual": 2.220446049250313e-16,
+          "n": 2,
+          "unknown_sites": [
+            0,
+            1
+          ]
+        },
+        {
+          "analytic_bound": 205.20454097829614,
+          "averaged_chi_squared": 0.0009550450616363736,
+          "averaged_kl": 0.00047662807380742945,
+          "block_size": 3,
+          "chi_to_bound_ratio": 4.654112706684136e-06,
+          "contrast": 0.65,
+          "max_probability_normalization_residual": 4.440892098500626e-16,
+          "n": 2,
+          "unknown_sites": [
+            0,
+            1
+          ]
+        },
+        {
+          "analytic_bound": 1.1851851851851851,
+          "averaged_chi_squared": 0.00010386441635445239,
+          "averaged_kl": 5.188888348511968e-05,
+          "block_size": 2,
+          "chi_to_bound_ratio": 8.763560129906921e-05,
+          "contrast": 0.25,
+          "max_probability_normalization_residual": 4.440892098500626e-16,
+          "n": 3,
+          "unknown_sites": [
+            1
+          ]
+        },
+        {
+          "analytic_bound": 36.789115646258495,
+          "averaged_chi_squared": 0.0007027848568703504,
+          "averaged_kl": 0.00035057332480014193,
+          "block_size": 2,
+          "chi_to_bound_ratio": 1.910306471152765e-05,
+          "contrast": 0.65,
+          "max_probability_normalization_residual": 3.3306690738754696e-16,
+          "n": 3,
+          "unknown_sites": [
+            1
+          ]
+        },
+        {
+          "analytic_bound": 0.5267489711934155,
+          "averaged_chi_squared": 0.00011415049897512569,
+          "averaged_kl": 5.7093069761804945e-05,
+          "block_size": 2,
+          "chi_to_bound_ratio": 0.00021670758789809025,
+          "contrast": 0.25,
+          "max_probability_normalization_residual": 4.440892098500626e-16,
+          "n": 3,
+          "unknown_sites": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "analytic_bound": 16.350718065003772,
+          "averaged_chi_squared": 0.0007711739875310177,
+          "averaged_kl": 0.0003858083504159794,
+          "block_size": 2,
+          "chi_to_bound_ratio": 4.716453335352889e-05,
+          "contrast": 0.65,
+          "max_probability_normalization_residual": 4.440892098500626e-16,
+          "n": 3,
+          "unknown_sites": [
+            0,
+            1,
+            2
+          ]
+        }
+      ]
+    }
+  ]
+}
