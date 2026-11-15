@@ -1,0 +1,27 @@
+# Quantum Learning Batch Threshold
+
+This repository studies signed scalar learning from IID native marked-Pauli specimens. A fixed hidden full-support axis word selects the payload correlation. Each known-basis classical marker reveals its axis independently with probability q, otherwise reports an erasure.
+
+The central result is a specimen/batch law under the absence of control between preplanned blocks: polynomial fixed-error learning iff n(1-q)^b=O(log n). For each fixed block cap b the exponential specimen base beta_b^(-n), beta_b=1-(1-q)^b/3, matches. A local single-copy learner with one feedback round uses O(log n) specimens at fixed accuracy.
+
+## Reading routes
+
+- Story and results: README.md, then science/README.md.
+- Exact source, input/output promises, signed parameter interval, seed/partition rules and resource definitions: science/model.md.
+- Finite lower bound against arbitrary collective block POVMs: science/collective_converse.md. Its authoritative proof uses an odd-tensor logical Pauli algebra, signed partial-trace contraction, marker conditioning, final hidden-word revelation, additive KL and Pinsker.
+- Attaining finite protocol and unconditional failure accounting: science/attaining_measurements.md. It gives GHZ full-support counts, the exact marker-averaged acceptance probability, classical filtering and an ideal-decoder union-bound proof.
+- A complete two-qubit source/marker/Bell-measurement example: science/worked_example.md.
+- Fixed-b exponential order, varying-cap iff, log n minus log log n boundary and cap truncation: science/phase_boundary.md.
+- Specimens, source generation, receiver gates, classical storage/decoding and physical assumptions: science/resources.md.
+- Closest statements, inherited mechanisms, versions and comparison limits: references/RELATED_WORK.md and references/references.bib.
+- Reproduction, tested scope and saved finite results: verification/README.md and verification/check_science.py.
+
+## Distinctions that must remain attached to the result
+
+No earlier marker or payload outcome may choose a later block's measurement. Internal marker-dependent control is allowed within a block. Every final classical record may be processed jointly. No coherent carrier or shared entangled ancilla connects the blocks.
+
+The parameter is signed and the comparison domain contains fixed opposite alternatives. Magnitude-only or positive-only estimation is a different task. q, accuracy and confidence are fixed in the asymptotic iff; the finite inequalities state their parameters explicitly.
+
+b counts source specimens in a preplanned experiment, not simultaneous quantum width, holding time, entanglement depth or circuit depth. The attaining implementation can discard early payloads and use the final payload after reading the block's markers. GHZ entanglement occurs only within that payload. The lower nevertheless permits arbitrary collective b-copy effects.
+
+Input states are separable and native; no QRAM, unknown-state preparation/inverse oracle, purification or free hidden-word description is supplied. All unused/rejected specimens count. The result is an information-theoretic specimen comparison, without a noisy-device, priority-certification or total training-runtime claim.
