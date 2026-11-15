@@ -12,14 +12,16 @@ The [workflow](../../.github/workflows/hosted-math.yml) checks out the exact sam
 
 The representative README probe runs first. A successful probe is followed by the collector's full default Markdown inventory, including this page. The workflow retains the diagnostic and full reports, HTML, and screenshots even when a later step fails. A failed probe prevents the full capture from running; its failed evidence remains available. Workflow artifacts expire after 14 days and are not permanent preservation.
 
+The [local runtime adapter](run_hosted_math.cjs) uses the collector's supported runtime hook while leaving those three helpers unchanged. Before screenshots it returns to the page top and lets the sticky toolbar settle. It also saves ordinary viewport screenshots at the top and after a 500-pixel scroll, so a reviewer can inspect text covered by the toolbar in a full-page screenshot. Their separate `visual-supplements.json` records the source, URLs, viewports, times and file hashes. The adapter changes no page content, style, compiler or comparison rule. Its SHA256 is `c6b0d86968b3415376cf921c63e6d57f08a979fca7c37999c70913281002fff6`.
+
 For a permitted local browser environment, install Playwright 1.56.1 and MathJax 3.2.1 outside the scientific source, install the matching Chromium browser, and set `NODE_PATH` to that dependency directory. Run:
 
 ```bash
-node verification/hosted_math/probe_hosted_math.cjs \
+node verification/hosted_math/run_hosted_math.cjs probe \
   --root /absolute/checkout --repository GoGoKo699/Quantum-Learning-Batch-Threshold \
   --revision FULL_COMMIT_SHA --page README.md --output /absolute/new-probe-directory
 
-node verification/hosted_math/capture_hosted_math.cjs \
+node verification/hosted_math/run_hosted_math.cjs capture \
   --root /absolute/checkout --repository GoGoKo699/Quantum-Learning-Batch-Threshold \
   --revision FULL_COMMIT_SHA --output /absolute/new-full-directory
 ```

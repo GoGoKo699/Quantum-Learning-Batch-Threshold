@@ -43,14 +43,14 @@ jobs:
       - name: Probe representative README mathematics
         run: |
           export NODE_PATH="$RUNNER_TEMP/math-runtime/node_modules"
-          node verification/hosted_math/probe_hosted_math.cjs \
+          node verification/hosted_math/run_hosted_math.cjs probe \
             --root "$GITHUB_WORKSPACE" --repository "$GITHUB_REPOSITORY" \
             --revision "$CAPTURE_REVISION" --page README.md \
             --output "$RUNNER_TEMP/hosted-math-probe"
       - name: Compare the complete hosted Markdown inventory
         run: |
           export NODE_PATH="$RUNNER_TEMP/math-runtime/node_modules"
-          node verification/hosted_math/capture_hosted_math.cjs \
+          node verification/hosted_math/run_hosted_math.cjs capture \
             --root "$GITHUB_WORKSPACE" --repository "$GITHUB_REPOSITORY" \
             --revision "$CAPTURE_REVISION" --output "$RUNNER_TEMP/hosted-math"
       - name: Run the existing scientific and navigation checks
