@@ -14,9 +14,9 @@ P_a=\bigotimes_{i=1}^n\sigma_{a_i},
 \sigma_{a,c}=\frac{I+cP_a}{2^n}.
 ```
 
-The scalar $`c`$ is a **signed contrast**. Fix $`0<c_{\max}<1`$ and take $`c\in[-c_{\max},c_{\max}]`$. The payload is a valid, full-rank density operator: $`P_a`$ is traceless and $`P_a^2=I`$.
+The scalar $`c`$ is a **signed contrast**. Fix $`0\lt c_{\max}\lt 1`$ and take $`c\in[-c_{\max},c_{\max}]`$. The payload is a valid, full-rank density operator: $`P_a`$ is traceless and $`P_a^2=I`$.
 
-Each site also has a four-level classical marker with orthogonal known basis states $`\{\bot,X,Y,Z\}`$. At a fixed known reveal probability $`0<q<1`$,
+Each site also has a four-level classical marker with orthogonal known basis states $`\{\bot,X,Y,Z\}`$. At a fixed known reveal probability $`0\lt q\lt 1`$,
 
 ```math
 \tau_{a_i}=q|a_i\rangle\langle a_i|
@@ -33,7 +33,7 @@ The learner receives native specimens, not a classical description of $`a`$, a c
 
 ## The learning task
 
-For fixed accuracy $`0<\epsilon<c_{\max}`$ and confidence failure $`0<\delta\leq1/3`$, return a classical estimate satisfying
+For fixed accuracy $`0\lt \epsilon\lt c_{\max}`$ and confidence failure $`0\lt \delta\leq1/3`$, return a classical estimate satisfying
 
 ```math
 \sup_{a\in\{X,Y,Z\}^n}
@@ -90,7 +90,7 @@ For $`n\geq2`$, every proper payload marginal is maximally mixed, independent of
 \frac12\|\omega_{a,c}-\omega_{a,c'}\|_1
 =\frac{|c-c'|}{2},
 \qquad
-\operatorname{Tr}(P_a\sigma_{a,c})=c.
+\mathrm{Tr}(P_a\sigma_{a,c})=c.
 ```
 
 A known word would make estimating it a simple Bernoulli-mean problem. Unknown measurement instructions, rather than source entanglement or an expensive implicit state representation, produce the difficulty. The marked-Pauli mechanism is inherited from the closest work; the new quantitative question concerns growing blocks. See [attribution](../references/RELATED_WORK.md).

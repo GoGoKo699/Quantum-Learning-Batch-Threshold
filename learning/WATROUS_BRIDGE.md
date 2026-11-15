@@ -42,7 +42,7 @@ Each has measurement outcomes $`+1`$ and $`-1`$. A hidden word $`a=(a_1,\ldots,a
 Knowing the axes turns the problem into estimating the average of a random sign, because
 
 ```math
-\operatorname{Tr}(P_a\sigma_{a,c})=c.
+\mathrm{Tr}(P_a\sigma_{a,c})=c.
 ```
 
 At each site a marker reveals the correct axis with probability $`q`$, or displays an erasure with probability $`1-q`$. The marker is an instruction about a measurement, rather than an answer giving $`c`$. The hidden word stays fixed for every specimen. The independent erasures and payload outcomes vary.
@@ -59,7 +59,7 @@ Watrous often uses matrix notation for vectors and adjoints. The project also us
 | Adjoint $`A^*`$ | $`A^\dagger`$ | Conjugate transpose |
 | A state in $`\mathrm D(\mathcal X)`$ | $`\sigma_{a,c}`$ for the payload | A positive trace-one operator |
 | Measurement effect $`\mu(z)`$ | $`M_z`$ | The positive operator for recorded outcome $`z`$ |
-| $`\langle\mu(z),\sigma\rangle`$ | $`\operatorname{Tr}(M_z\sigma)`$ | That outcome's probability |
+| $`\langle\mu(z),\sigma\rangle`$ | $`\mathrm{Tr}(M_z\sigma)`$ | That outcome's probability |
 | Trace norm $`\lVert A\rVert_1`$ | The same symbol | Sum of singular values; for Hermitian operators, sum of absolute eigenvalues |
 | Base-two relative entropy $`D_{\mathrm{book}}(p\Vert r)`$ | Natural-log $`D_{\mathrm{KL}}(p\Vert r)`$ | $`D_{\mathrm{KL}}=(\ln2)D_{\mathrm{book}}`$ |
 
@@ -73,13 +73,13 @@ uu^*\longleftrightarrow|u\rangle\langle u|.
 The project's total variation distance is half the ordinary one-norm distance between probability vectors:
 
 ```math
-\operatorname{TV}(p,r)=\frac12\sum_z|p(z)-r(z)|.
+\mathrm{TV}(p,r)=\frac12\sum_z|p(z)-r(z)|.
 ```
 
 Watrous's classical Pinsker inequality therefore becomes, with natural logarithms,
 
 ```math
-\operatorname{TV}(p,r)\leq
+\mathrm{TV}(p,r)\leq
 \sqrt{\frac12D_{\mathrm{KL}}(p\|r)}.
 ```
 
@@ -116,7 +116,7 @@ A general block measurement is a POVM on all payloads, rather than a particular 
 First, read the block's markers. With $`b`$ specimens, a site remains unresolved precisely when all its markers were erased:
 
 ```math
-K\sim\operatorname{Bin}\big(n,(1-q)^b\big).
+K\sim\mathrm{Bin}\big(n,(1-q)^b\big).
 ```
 
 Second, compare fixed possibilities $`c=+c_0`$ and $`c=-c_0`$. Their product-state difference contains only terms using an odd number of copies of $`P_a`$. Odd tensor powers of $`X,Y,Z`$ still act as a logical Pauli triple, with a possible sign and an extra multiplicity space. Pauli orthogonality limits the average squared response of every block effect.

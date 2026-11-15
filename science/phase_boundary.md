@@ -14,7 +14,7 @@ The source, accuracy convention and control restrictions are those of the signed
 
 ## One finite pair of bounds
 
-Fix a testing contrast $`0<c_0<1`$ and error $`\eta<1/2`$. For every predetermined-block protocol of hard specimen budget $`N`$ that succeeds for every hidden word,
+Fix a testing contrast $`0\lt c_0\lt 1`$ and error $`\eta\lt 1/2`$. For every predetermined-block protocol of hard specimen budget $`N`$ that succeeds for every hidden word,
 
 ```math
 N\geq
@@ -24,9 +24,9 @@ A_b(c_0)=
 \frac{[(1+c_0)^b-(1-c_0)^b]^2}{(1-c_0)^b}.
 ```
 
-The [finite converse](collective_converse.md) permits arbitrary joint measurements within blocks and unequal preplanned block sizes. Estimation to accuracy $`\epsilon<c_0`$ over a domain containing both $`\pm c_0`$ inherits the bound.
+The [finite converse](collective_converse.md) permits arbitrary joint measurements within blocks and unequal preplanned block sizes. Estimation to accuracy $`\epsilon\lt c_0`$ over a domain containing both $`\pm c_0`$ inherits the bound.
 
-Conversely, at confidence failure $`0<\delta\leq1/3`$, a block experiment of actual size $`r\leq b`$ and randomized GHZ measurement attains uniform accuracy $`\epsilon`$ using
+Conversely, at confidence failure $`0\lt \delta\leq1/3`$, a block experiment of actual size $`r\leq b`$ and randomized GHZ measurement attains uniform accuracy $`\epsilon`$ using
 
 ```math
 N\leq
@@ -107,7 +107,7 @@ The constant determines the allowed polynomial degree. This is an asymptotic fea
 | Batch scale | Residual instructions | Consequence at fixed accuracy |
 |---|---|---|
 | Fixed $`b`$ | $`\Theta(n)`$ | Exponential specimens with matching base $`\beta_b^{-n}`$ |
-| $`b=\alpha\log n/\ell+O(1)`$, fixed $`0<\alpha<1`$ | $`\Theta(n^{1-\alpha})`$ | Stretched-exponential specimens, $`\log N=\Theta(n^{1-\alpha})`$ |
+| $`b=\alpha\log n/\ell+O(1)`$, fixed $`0\lt \alpha\lt 1`$ | $`\Theta(n^{1-\alpha})`$ | Stretched-exponential specimens, $`\log N=\Theta(n^{1-\alpha})`$ |
 | $`b\geq(\log n-\log\log n-C)/\ell`$ | $`O(\log n)`$ | Polynomial specimens |
 
 For the second row, bounded integer rounding changes $`t_b`$ by a constant factor. It must not be discarded when stating a leading exponent coefficient. The finite bounds are the authoritative statements.

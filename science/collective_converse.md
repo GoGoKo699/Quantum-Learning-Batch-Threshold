@@ -6,7 +6,7 @@ The proof below works directly with two nonzero contrasts. Its conclusion theref
 
 ## 1. Finite theorem
 
-Let $`n\geq1`$, $`0<q<1`$, and let the block cap $`b\geq1`$ be an integer. Fix a contrast $`0<c_0<1`$. Write
+Let $`n\geq1`$, $`0\lt q\lt 1`$, and let the block cap $`b\geq1`$ be an integer. Fix a contrast $`0\lt c_0\lt 1`$. Write
 
 ```math
 t_b=(1-q)^b,\qquad
@@ -17,7 +17,7 @@ A_b(c_0)=
 
 A protocol uses at most $`N`$ source specimens, partitioned into preplanned blocks of sizes at most $`b`$. Block sizes and measurements may depend on an independent shared classical seed. Each block ends in a classical record. The specimen budget is a maximum budget; the theorem does not assume an unbounded stopping rule controlled by previous outcomes.
 
-**Theorem.** If the protocol decides whether $`c=+c_0`$ or $`c=-c_0`$ with error at most $`\eta<1/2`$ for every hidden axis word $`a\in\{X,Y,Z\}^n`$, then
+**Theorem.** If the protocol decides whether $`c=+c_0`$ or $`c=-c_0`$ with error at most $`\eta\lt 1/2`$ for every hidden axis word $`a\in\{X,Y,Z\}^n`$, then
 
 ```math
 N\ \geq\
@@ -33,7 +33,7 @@ N\ \geq\ \frac{2b}{9A_b(c_0)\,\beta_b^n}.
 
 The weaker bound obtained by omitting the numerator factor $`b`$ is also valid. The displayed stronger form includes unequal predetermined block sizes.
 
-If an estimator has absolute error at most $`\epsilon<c_0`$ with probability at least $`1-\eta`$ uniformly over the hidden word and both contrasts, the sign of its estimate gives such a decision. Thus the same lower bound applies whenever the estimation interval contains $`\pm c_0`$. The bound is minimax: it does not assert that every individual hidden word has the same difficulty.
+If an estimator has absolute error at most $`\epsilon\lt c_0`$ with probability at least $`1-\eta`$ uniformly over the hidden word and both contrasts, the sign of its estimate gives such a decision. Thus the same lower bound applies whenever the estimation interval contains $`\pm c_0`$. The bound is minimax: it does not assert that every individual hidden word has the same difficulty.
 
 We use natural logarithms in relative entropy and asymptotic logarithms.
 
@@ -56,7 +56,7 @@ Marker registers are classical in orthogonal known basis states. Consequently an
 Fix the observed marker pattern and its revealed values. Let $`K`$ be the coordinates erased in all $`s`$ marker copies and write $`k=|K|`$. Every remaining coordinate has a known axis. Conditional on these observations, the unresolved axes are still independent uniform elements of $`\{X,Y,Z\}`$. Furthermore,
 
 ```math
-k\sim\operatorname{Bin}\!\big(n,t_s\big),
+k\sim\mathrm{Bin}\!\big(n,t_s\big),
 \qquad t_s=(1-q)^s.
 ```
 
@@ -71,7 +71,7 @@ For a nonempty subset $`S\subseteq\{1,\ldots,s\}`$, let $`Q_{a,S}`$ put $`P_a`$ 
 ```math
 \frac{1}{3^k}
 \sum_{a_K\in\{X,Y,Z\}^k}
-\big[\operatorname{Tr}(\omega Q_{a,S})\big]^2
+\big[\mathrm{Tr}(\omega Q_{a,S})\big]^2
 \ \leq\ \left(\frac23\right)^k.
 ```
 
@@ -98,7 +98,7 @@ The identity factor is a multiplicity space. Taking all unresolved coordinates g
 The known coordinates contribute a fixed Hermitian unitary $`F`$ on the complementary space; unused copies contribute identity factors. After the preceding unitary changes of coordinates, define the signed reduced operator
 
 ```math
-B=\operatorname{Tr}_{\mathrm{comp}}
+B=\mathrm{Tr}_{\mathrm{comp}}
 \big[(I\otimes F)\omega'\big].
 ```
 
@@ -108,11 +108,11 @@ It is essential that $`B`$ need not be positive. If $`F=\Pi_+-\Pi_-`$, cyclicity
 B=B_+-B_-,
 \qquad
 B_\pm=
-\operatorname{Tr}_{\mathrm{comp}}
+\mathrm{Tr}_{\mathrm{comp}}
 \big[(I\otimes\Pi_\pm)\omega'
      (I\otimes\Pi_\pm)\big]\geq0,
 \qquad
-\operatorname{Tr}(B_++B_-)=1.
+\mathrm{Tr}(B_++B_-)=1.
 ```
 
 Hence $`\|B\|_1\leq1`$. The claim would be unjustified if this signed operator were treated as a density matrix without this step.
@@ -121,9 +121,9 @@ For a $`k`$-qubit density matrix $`\tau`$, Pauli Parseval gives
 
 ```math
 \sum_{P\in\{I,X,Y,Z\}^{\otimes k}}
-\big[\operatorname{Tr}(\tau P)\big]^2
+\big[\mathrm{Tr}(\tau P)\big]^2
 =
-2^k\operatorname{Tr}(\tau^2)
+2^k\mathrm{Tr}(\tau^2)
 \leq2^k.
 ```
 
@@ -131,12 +131,12 @@ For $`k\geq1`$, removing the identity coefficient and keeping only full-support 
 
 ```math
 \sum_{a_K\in\{X,Y,Z\}^k}
-\big[\operatorname{Tr}(\omega Q_{a,S})\big]^2
+\big[\mathrm{Tr}(\omega Q_{a,S})\big]^2
 \leq2^k-1
 \qquad(k\geq1).
 ```
 
-Dividing by $`3^k`$ proves the stated bound. When $`k=0`$, use $`|\operatorname{Tr}(\omega Q_{a,S})|\leq1`$. The expression $`2^k-1`$ must not be used at that endpoint.
+Dividing by $`3^k`$ proves the stated bound. When $`k=0`$, use $`|\mathrm{Tr}(\omega Q_{a,S})|\leq1`$. The expression $`2^k-1`$ must not be used at that endpoint.
 
 The proof places no restriction on entanglement inside $`\omega`$ or on the measurement effect from which it will be obtained.
 
@@ -145,11 +145,11 @@ The proof places no restriction on entanglement inside $`\omega`$ or on the meas
 Fix a marker record. Let $`\{M_z\}_z`$ be its conditional payload POVM. Zero effects may be omitted. Define
 
 ```math
-p_0(z)=\frac{\operatorname{Tr}M_z}{2^{ns}},
+p_0(z)=\frac{\mathrm{Tr}M_z}{2^{ns}},
 \qquad
 r_{a,S}(z)=
-\frac{\operatorname{Tr}(M_zQ_{a,S})}
-     {\operatorname{Tr}M_z}.
+\frac{\mathrm{Tr}(M_zQ_{a,S})}
+     {\mathrm{Tr}M_z}.
 ```
 
 The reference probabilities sum to one. Expanding the product payload state at $`c=\pm c_0`$ gives
@@ -297,7 +297,7 @@ Pinsker's inequality and the budget bound give
 ```math
 1-2\eta
 \leq
-\operatorname{TV}(\mathcal P_+,\mathcal P_-)
+\mathrm{TV}(\mathcal P_+,\mathcal P_-)
 \leq
 \sqrt{\frac12
 D_{\mathrm{KL}}(\mathcal P_+\|\mathcal P_-)}
@@ -334,7 +334,7 @@ N_{\min}(n;b,q,c_0)
 
 The constants may depend on those fixed parameters. This statement does not identify the optimal finite constants.
 
-For a varying integer cap $`b=b(n)`$, fix $`q`$, the confidence and an accuracy $`\epsilon<c_0`$ on an estimation interval containing $`\pm c_0`$. Set $`\ell=-\log(1-q)>0`$ and $`w_n=n e^{-\ell b(n)}`$. A uniform polynomial specimen budget is possible exactly when
+For a varying integer cap $`b=b(n)`$, fix $`q`$, the confidence and an accuracy $`\epsilon\lt c_0`$ on an estimation interval containing $`\pm c_0`$. Set $`\ell=-\log(1-q)>0`$ and $`w_n=n e^{-\ell b(n)}`$. A uniform polynomial specimen budget is possible exactly when
 
 ```math
 w_n=n(1-q)^{b(n)}=O(\log n).
