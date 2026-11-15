@@ -16,6 +16,12 @@ The central result is a specimen/batch law under the absence of control between 
 - Closest statements, inherited mechanisms, versions and comparison limits: references/RELATED_WORK.md and references/references.bib.
 - Reproduction, tested scope and saved finite results: verification/README.md and verification/check_science.py.
 
+## Learning route
+
+The single educational anchor is John Watrous, The Theory of Quantum Information (2018). Begin with learning/README.md, then learning/WATROUS_BRIDGE.md and the complete science/worked_example.md. learning/MILESTONES.md is the canonical map of exactly M01–M30: 11 background targets followed by 19 narrative targets. The map is project-defined and contains no personal learner records.
+
+The bridge distinguishes textbook foundations from the project's marked source, odd-subset converse, GHZ coverage and finite statistical proof. It translates Watrous's base-two entropy convention to the natural logarithms used in the converse. Specialist readers can proceed directly to the authoritative science pages listed above.
+
 ## Distinctions that must remain attached to the result
 
 No earlier marker or payload outcome may choose a later block's measurement. Internal marker-dependent control is allowed within a block. Every final classical record may be processed jointly. No coherent carrier or shared entangled ancilla connects the blocks.

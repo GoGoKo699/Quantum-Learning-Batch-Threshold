@@ -15,6 +15,18 @@ Only NumPy and the Python standard library are used. The seed is fixed at `20261
 
 The [saved report](results.json) contains the observed run for the committed science inputs. Its own file is excluded from input hashes to avoid self-reference. Running to `/tmp` leaves the repository unchanged.
 
+## Navigation and shared learning checks
+
+From the repository root:
+
+```bash
+python3 verification/check_repository.py --output /tmp/batch-threshold-repository-checks.json
+```
+
+The [repository checker](check_repository.py) uses only Python's standard library. It checks relative file links and heading fragments, the single canonical M01–M30 map and its two phases, backward milestone dependencies, the selected Watrous (2018) source identity, explicit private-coaching boundary patterns, and the saved scientific report's hashes against the current science inputs. A stale report fails this check; rerun the scientific suite after changing those inputs.
+
+These structural checks support navigation and reproducibility. Scientific meaning, educational coherence, and the actual hosted mathematical presentation require their separate reviews; a structural pass does not establish them.
+
 ## What is checked
 
 | Check | Finite scope | Independent construction |
