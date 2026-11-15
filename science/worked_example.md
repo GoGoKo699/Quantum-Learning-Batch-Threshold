@@ -32,7 +32,7 @@ Y\otimes Y=-(X\otimes X)(Z\otimes Z).
 
 If their recorded eigenvalues are $`z_0,z_2`$, the $`Y\otimes Y`$ eigenvalue is $`-z_0z_2`$. This sign is why counting covered axis words alone is insufficient to implement the decoder.
 
-For an example of a covered random frame, take $`C=S\otimes H`$, where $`S=\operatorname{diag}(1,i)`$ and $`H`$ is Hadamard. Then
+For an example of a covered random frame, take $`C=S\otimes H`$, where $`S=\mathrm{diag}(1,i)`$ and $`H`$ is Hadamard. Then
 
 ```math
 C(X\otimes X)C^\dagger=Y\otimes Z.

@@ -38,6 +38,12 @@ Start with the [scientific overview](science/README.md).
 
 Goldar and coauthors' [marked single-copy separation](https://arxiv.org/abs/2610.38922v1) is the immediate antecedent. Chen, Gong and Zhang's [two-copy separation](https://arxiv.org/abs/2412.19022v1) supplies closely related signed-Pauli information bounds. This project's addition is the growing-batch finite-contrast frontier and matching coverage construction. It does not establish the erasure-marker law for a different noisy-marker channel.
 
+## Learn the argument
+
+The educational anchor is **John Watrous, *The Theory of Quantum Information* (2018)**. The [source-to-project bridge](learning/WATROUS_BRIDGE.md) identifies the needed sections, translates notation and logarithm conventions, and supplies the steps from textbook distinguishability to this batch theorem.
+
+The [30-milestone map](learning/MILESTONES.md) has 11 background milestones and 19 narrative milestones. It connects single-qubit measurements and classical instructions to the collective converse, the GHZ construction and the complete resource boundary. Start with the [learning guide](learning/README.md); the [two-qubit experiment](science/worked_example.md) provides a concrete source, measurement and decoding example.
+
 ## Reproduce the finite checks
 
 From this directory:

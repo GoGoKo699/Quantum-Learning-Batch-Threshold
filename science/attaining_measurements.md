@@ -7,7 +7,7 @@ The marked source supplies independent specimens with one fixed hidden axis word
 P_a=\bigotimes_{i=1}^n a_i.
 ```
 
-Each classical marker independently reveals its axis with known probability $`q\in(0,1)`$, or reports an erasure. The [model](model.md) specifies the signed learning task and the permitted experiments. This page gives an explicit protocol for a working block size $`r\le b`$, where $`b`$ is the allowed cap. The protocol estimates $`c`$ for every $`c\in[-1,1]`$. The lower-bound comparison and the resulting polynomial-feasibility criterion concern the signed task on $`[-c_{\max},c_{\max}]`$, with $`0<c_0\le c_{\max}<1`$ and fixed accuracy $`\epsilon<c_0`$.
+Each classical marker independently reveals its axis with known probability $`q\in(0,1)`$, or reports an erasure. The [model](model.md) specifies the signed learning task and the permitted experiments. This page gives an explicit protocol for a working block size $`r\le b`$, where $`b`$ is the allowed cap. The protocol estimates $`c`$ for every $`c\in[-1,1]`$. The lower-bound comparison and the resulting polynomial-feasibility criterion concern the signed task on $`[-c_{\max},c_{\max}]`$, with $`0\lt c_0\le c_{\max}\lt 1`$ and fixed accuracy $`\epsilon\lt c_0`$.
 
 ## Read the block's markers, then measure one payload
 
@@ -22,7 +22,7 @@ t_r=(1-q)^r,\qquad
 In each block, read all its markers in their known computational basis. Let $`U`$ be the sites whose axes have not been revealed by any of the block's $`r`$ specimens, and let $`K=|U|`$. Conditional on any fixed hidden word, the erasure events are independent across sites, so
 
 ```math
-K\sim\operatorname{Bin}(n,t_r).
+K\sim\mathrm{Bin}(n,t_r).
 ```
 
 Use one payload from the block. The other payloads are unused and remain charged specimens. At every site outside $`U`$, measure the payload in the axis revealed by the block's own markers. On the $`K`$ unresolved sites, use the randomized GHZ-basis measurement below. Save the block's revealed-axis union, its random basis choices, and its payload outcomes.
@@ -117,7 +117,7 @@ These bounds explain the common exponential factor in the attaining protocol and
 
 ## A finite sample guarantee
 
-Fix $`0<\delta\le1/3`$ and $`0<\epsilon<1`$. Set
+Fix $`0\lt \delta\le1/3`$ and $`0\lt \epsilon\lt 1`$. Set
 
 ```math
 m=\left\lceil\frac{2}{\epsilon^2}\ln\frac6\delta\right\rceil,
@@ -142,7 +142,7 @@ Here is a proof that does not condition the sign analysis on successful global m
 Since $`\mu\ge2m+8L`$, a multiplicative Chernoff bound gives
 
 ```math
-\Pr(M<m)\le\Pr(M<\mu/2)
+\Pr(M\lt m)\le\Pr(M\lt \mu/2)
 \le e^{-\mu/8}\le\delta/3.
 ```
 

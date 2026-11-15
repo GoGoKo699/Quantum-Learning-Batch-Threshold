@@ -1,5 +1,5 @@
 {
-  "checked_at_utc": "2026-11-15T08:45:02.254052+00:00",
+  "checked_at_utc": "2026-11-15T09:20:34.960530+00:00",
   "deterministic_seed": 20261115,
   "diagnostic_scope": {
     "absolute_tolerance": 3e-11,
@@ -13,15 +13,15 @@
     "numerical": "Explicit raw matrix/operator, Born-law, odd-Pauli and joint-POVM checks at the listed small dimensions",
     "sampling_note": "Random matrices use a fixed seed. No end-to-end experiment Monte Carlo is presented; decoded Bernoulli laws are checked directly from explicit Born probabilities."
   },
-  "duration_seconds": 0.21638770799836493,
+  "duration_seconds": 0.1933857399999397,
   "input_sha256": {
     "science/README.md": "f2e0d3f8e84e9f4f04dff06ff9d1f9a15d5a7e67f7efe514207e9164aeb20b9f",
-    "science/attaining_measurements.md": "8a3ad4557797ff43a7a1862d07f23b90618d7e32bd150552723a800cbb425256",
-    "science/collective_converse.md": "2a7ed27a9f0d958c99e46f863992614edc945dad8b38f5f95b15ff53857ffd81",
-    "science/model.md": "8ed2242cc7a4fb73bd29408b346d0f0664485c864d915620d9ffc370b32cc296",
-    "science/phase_boundary.md": "0f287a92e67e5ad4dfef308a5b6bdb5ca31cdfa411fd13cba2d58ec6542e0cad",
+    "science/attaining_measurements.md": "d34958c0860329d758cc6744f3efa85a5ff8123a5b15d05994b64952b68a46ba",
+    "science/collective_converse.md": "1db3e7365f098306c610158e706b4b70408de5ea9590f9d08ac258f216a0aab8",
+    "science/model.md": "352f3ca11e20866b0bf26f99d3779f1bf2993c1d71b477788fea2da47608bcc0",
+    "science/phase_boundary.md": "df4129fbfae4c91c7c49eb14bc4e4c3d9ff9a39b157c97e850ace80e1581e72d",
     "science/resources.md": "70ed8eab09dc7f4247712d0e6dba9830a20f57e85db7a1bf9719a87874695ddc",
-    "science/worked_example.md": "8718c9b95be2e3d2c13a0411d54f07abae6bc3b4c3b71873a515553e30bd4f47",
+    "science/worked_example.md": "aebe11d0eec37955591f429f089a7251bc68a54fa9f9bf772f2c070e21c6cb2c",
     "verification/check_science.py": "59b9440304df9ca9e51620b54180053fc495c682abf3709d1ce8cfac91498ea4"
   },
   "passed": true,
@@ -48,7 +48,7 @@
         "11": 1024,
         "12": 2049
       },
-      "duration_seconds": 0.010538916001678444,
+      "duration_seconds": 0.009068012997886399,
       "method": "Independent binary symplectic enumeration of star-generator products",
       "name": "binary_symplectic_ghz_counts",
       "passed": true
@@ -56,7 +56,7 @@
     {
       "cases": 154,
       "covered_raw_operator_cases": 66,
-      "duration_seconds": 0.06437442300011753,
+      "duration_seconds": 0.058118339999055024,
       "even_all_z_cases": 3,
       "local_clifford_cases": 32,
       "max_absolute_residual": 3.3306690738754696e-15,
@@ -84,7 +84,7 @@
         7
       ],
       "cases": 240,
-      "duration_seconds": 0.028040848999808077,
+      "duration_seconds": 0.025396743996680016,
       "method": "Binomial average of independently enumerated stabilizer counts versus generating-function closed form",
       "n_values": [
         1,
@@ -112,7 +112,7 @@
     },
     {
       "cases": 9,
-      "duration_seconds": 0.0009799899999052286,
+      "duration_seconds": 0.000979972999630263,
       "method": "Raw tensor Pauli operators in an independently constructed parity/complement basis",
       "name": "odd_tensor_pauli_representation",
       "passed": true,
@@ -205,7 +205,7 @@
           ]
         }
       ],
-      "duration_seconds": 0.010979578997648787,
+      "duration_seconds": 0.010395711000455776,
       "max_response_to_bound_ratio": 0.7002969721690533,
       "method": "Raw subset-Pauli expectations of random complex pure block effects; explicit Bell-state signed known-site reduction",
       "name": "odd_subset_response_and_signed_reduction",
@@ -217,7 +217,7 @@
     },
     {
       "cases": 20,
-      "duration_seconds": 0.08696231599969906,
+      "duration_seconds": 0.08036265800183173,
       "max_block_hilbert_dimension": 64,
       "max_chi_to_bound_ratio": 0.0030741194785684186,
       "method": "Direct tensor density matrices and independently normalized random general joint POVMs; enumerate unresolved axes at finite +/- contrast",
