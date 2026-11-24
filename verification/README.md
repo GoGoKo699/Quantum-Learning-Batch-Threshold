@@ -1,6 +1,6 @@
 # Reproduce the finite scientific checks
 
-The general result follows from the written [finite converse](../science/collective_converse.md), [attaining protocol](../science/attaining_measurements.md), and [phase-boundary argument](../science/phase_boundary.md). This suite checks load-bearing finite algebra and probability calculations independently of those prose derivations.
+The general result follows from the written [finite converse](../science/collective_converse.md), [attaining protocol](../science/attaining_measurements.md), and [phase-boundary argument](../science/phase_boundary.md), and [noisy-marker theorem](../science/noisy-markers.md). This suite checks load-bearing finite algebra and probability calculations independently of those prose derivations.
 
 ## Run
 
@@ -11,7 +11,7 @@ python3 -m pip install -r verification/requirements.txt
 OPENBLAS_NUM_THREADS=1 python3 verification/check_science.py --output /tmp/batch-threshold-checks.json
 ```
 
-Only NumPy and the Python standard library are used. The seed is fixed at `20261115`. A passing run exits zero and prints a compact JSON summary; a failed diagnostic exits nonzero. The full report identifies every case, residual, bound, software version, input SHA-256 and observation time. It uses explicit runtime checks that remain active under optimized Python.
+Only NumPy and the Python standard library are used. The erasure checks use seed `20261115`. A passing run exits zero and prints a compact JSON summary; a failed diagnostic exits nonzero. The full report identifies every case, residual, bound, software version, input SHA-256 and observation time. It uses explicit runtime checks that remain active under optimized Python.
 
 The [saved report](results.json) contains the observed run for the committed science inputs. Its own file is excluded from input hashes to avoid self-reference. Running to `/tmp` leaves the repository unchanged.
 
@@ -38,7 +38,9 @@ These structural checks support navigation and reproducibility. Scientific meani
 | Odd-subset response and signed known-site reduction | Listed small block effects and an explicit signed reduction | Evaluate raw matrix expectations, including a reduction with eigenvalues $`-1/2,+1/2`$, rather than assuming it is positive |
 | Finite-contrast joint-POVM bound | 10 block configurations, two nonzero contrasts each, Hilbert dimension at most 64 | Normalize random general joint POVMs independently, evaluate tensor-density Born laws, enumerate unresolved axes, and compare KL, chi-squared divergence and the analytical block bound |
 
-The observed suite has **508 finite cases in six groups**. The numerical tolerance is $`3\times10^{-11}`$. Binary enumeration and rational identities are exact within their finite ranges; floating-point matrix tests are diagnostics. The maximum GHZ operator residual in the saved run is reported in its test group.
+| Noisy markers and two-axis coverage | Finite rational marker laws, Goldar binomial counts through 64 draws, weighted Pauli and GHZ matrix checks | Enumerate finite dual regions, compare an explicit primal certificate, evaluate weighted odd-Pauli response and reconstruct commutation, coverage, and decoded signs |
+
+The suite runs the original erasure diagnostics and the [noisy-marker checks](check_noisy_markers.py). The numerical tolerance is $`3\times10^{-11}`$. Binary enumeration and rational identities are exact within their finite ranges; floating-point matrix tests are diagnostics. The maximum GHZ operator residual in the saved run is reported in its test group.
 
 ## Limits
 

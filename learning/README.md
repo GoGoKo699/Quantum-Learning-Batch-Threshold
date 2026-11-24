@@ -17,7 +17,7 @@ Choose the route that matches what you want to understand.
 | Understand the complete result | Full bridge → example → the whole milestone map | [Overview](../science/README.md), [phase boundary](../science/phase_boundary.md), and [resources](../science/resources.md) |
 | Reconstruct the proof | Bridge's notation and proof connections → example → milestone dependencies | [Finite converse](../science/collective_converse.md) followed by [achievability](../science/attaining_measurements.md) |
 
-The central distinction is the timing of information use. A block may use its own markers to choose its measurement. Earlier blocks' records cannot control later measurements, although all records can be combined in the final classical decoder. Under this restriction, the signed task has polynomial specimen cost exactly when $`n(1-q)^b=O(\log n)`$. The cap counts source specimens in a preplanned experiment; it does not identify minimum coherent memory or holding time.
+A batch can choose its measurement using its own markers. The final decoder can use the full record. Keep these two times separate while reading the [erasure example](../science/worked_example.md) and then the [noisy-marker proof](../science/noisy-markers.md). In the latter, compare the probability of eliminating the true axis with the separate cost of identifying the entire word. The batch threshold measures how much information must arrive before measurement.
 
 The [verification guide](../verification/README.md) separates finite calculations from the analytical proof. [Research references](../references/RELATED_WORK.md) provide attribution and comparisons, while Watrous remains the sole educational anchor.
 

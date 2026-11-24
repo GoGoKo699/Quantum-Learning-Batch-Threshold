@@ -366,10 +366,10 @@ The asymptotic laws hold as the payload size grows with reveal probability, accu
 
 **Central question.** After crediting earlier work and all restrictions, what has been established?
 
-**Understanding target.** State the matched fixed-batch base and growing-batch polynomial criterion, explain the feedback comparison, and distinguish them from a positive-only contrast theorem, a memory-width/holding-time lower bound, an entanglement requirement or a generic training speedup.
+**Understanding target.** State the matched fixed-batch base and growing-batch polynomial criterion, explain the feedback comparison, and recover the erasure formula from the minimax omission error. State the signed domain and which operations may use the final marker record.
 
 **Dependencies and story role.** Synthesizes M11–M29 and closes the narrative phase with the whole scientific account.
 
-**Conceptual connection.** The inherited marker–signal separation and Pauli information budget support a new finite-sign batch frontier; the erasure-marker model and absence of feedback between blocks remain part of that contribution.
+**Conceptual connection.** The inherited marker–signal separation and Pauli information budget support a new finite-sign batch frontier; marker exclusion gives the same mechanism for erasure and noisy markers, with no feedback between blocks.
 
-**Sources.** Watrous W1–W3 and W5 as the one foundational anchor; [scientific overview](../science/README.md); [phase boundary](../science/phase_boundary.md); [resource interpretation](../science/resources.md); [precise prior-work comparison](../references/RELATED_WORK.md).
+**Sources.** Watrous W1–W3 and W5 as the one foundational anchor; [scientific overview](../science/README.md); [phase boundary](../science/phase_boundary.md); [noisy-marker theorem](../science/noisy-markers.md); [resource interpretation](../science/resources.md); [precise prior-work comparison](../references/RELATED_WORK.md).

@@ -4,6 +4,9 @@ The result compares specimen budgets for one scalar learning task. It charges ev
 
 The source and experiment classes are specified in the [model](model.md). Explicit finite costs and the decoding guarantee are proved in [attaining measurements](attaining_measurements.md).
 
+
+The tables below follow the erasure protocol. For noisy markers, the receiver additionally computes or precomputes an omission rule and allocates a separate set of marker observations for final word identification. The [general protocol](noisy-markers.md#measuring-with-two-retained-axes-at-every-site) charges both that allocation and every rejected block.
+
 ## Supplied information and charged specimens
 
 The learner knows $`n`$, the erasure probability $`q\in(0,1)`$, the source family, the allowed block cap $`b`$, the accuracy $`\epsilon`$, and the failure probability $`\delta`$. It does not know the fixed hidden axis word $`a`$ or the contrast $`c`$. Markers reveal axes only through the stated independent erasure channel. A classical description of the source's hidden word is not supplied.
