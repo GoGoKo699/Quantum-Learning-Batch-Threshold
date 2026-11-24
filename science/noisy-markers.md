@@ -22,7 +22,7 @@ e_b
 
 The dual identity follows from finite minimax. For a prior $`\pi`$, the best decision omits an axis with the smallest posterior probability. The optimal error is nonincreasing in $`b`$ because an omission rule can ignore observations. Uniform random omission gives $`0\le e_b\le 1/3`$.
 
-**Converse.** For any three marker laws and $`0<c_0<1`$, every preplanned block protocol with block sizes at most $`b`$ that distinguishes $`+c_0`$ from $`-c_0`$ with worst-case error at most $`\delta<1/2`$ uses at least
+**Converse.** For any three marker laws and $`0\lt c_0\lt 1`$, every preplanned block protocol with block sizes at most $`b`$ that distinguishes $`+c_0`$ from $`-c_0`$ with worst-case error at most $`\delta\lt 1/2`$ uses at least
 
 ```math
 N\ge
@@ -31,7 +31,7 @@ N\ge
 A_b(c_0)=\frac{[(1+c_0)^b-(1-c_0)^b]^2}{(1-c_0)^b}.
 ```
 
-The decoder may learn the true word after the measurements. The same bound applies to estimation with error tolerance $`\epsilon<c_0`$ on a contrast interval containing $`\pm c_0`$.
+The decoder may learn the true word after the measurements. The same bound applies to estimation with error tolerance $`\epsilon\lt c_0`$ on a contrast interval containing $`\pm c_0`$.
 
 **Achievability.** Suppose the three marker laws are pairwise distinct. For any actual block size $`r\le b`$, the protocol below estimates $`c`$ with absolute error at most $`\epsilon`$ and failure probability at most $`\delta`$, uniformly in the word and valid contrasts, using
 
@@ -41,7 +41,7 @@ O_Q\!\left(
 \right)
 ```
 
-specimens, for $`0<\epsilon<1`$ and $`0<\delta\le 1/3`$. At fixed $`b`$, accuracy and confidence, the signed estimation task has matching specimen order $`\Theta(\beta_b^{-n})`$ whenever $`e_b>0`$. If $`e_b=0`$, the upper bound still includes the logarithmic cost of learning the word. For the erasure marker of the [original model](model.md), a block leaves an unidentified axis uniformly distributed with probability $`(1-q)^b`$ under the uniform prior. Uniform omission in that event is also minimax, giving $`e_b=(1-q)^b/3`$.
+specimens, for $`0\lt \epsilon\lt 1`$ and $`0\lt \delta\le 1/3`$. At fixed $`b`$, accuracy and confidence, the signed estimation task has matching specimen order $`\Theta(\beta_b^{-n})`$ whenever $`e_b\gt 0`$. If $`e_b=0`$, the upper bound still includes the logarithmic cost of learning the word. For the erasure marker of the [original model](model.md), a block leaves an unidentified axis uniformly distributed with probability $`(1-q)^b`$ under the uniform prior. Uniform omission in that event is also minimax, giving $`e_b=(1-q)^b/3`$.
 
 ## The posterior bound for arbitrary joint measurements
 
@@ -73,7 +73,7 @@ Read all markers of a signal block of size $`r`$. At each site, use an optimal o
 
 Apply local Clifford changes of basis so that the retained axes are $`X`$ and $`Y`$, recording any signs. Divide the full-support $`X/Y`$ words into two classes according to the parity of the number of $`Y`$ factors. Two words in the same class differ at an even number of sites, so they commute. Randomly choose one class, then jointly measure a complete GHZ stabilizer basis containing that class, up to the recorded signs. For the even class, one can use the generators $`X^{\otimes n}`$ and $`Z_1Z_i`$ for $`2\le i\le n`$. A local Clifford that exchanges $`X`$ and $`Y`$ at one site changes the parity and gives the other class. This measurement uses just one payload. The probability that the measured class contains the true word is at least $`\beta_r^n/2`$.
 
-To decode, use a disjoint, predetermined group of specimens for marker-only word identification. Their payloads are discarded and their copies count toward the budget. Pairwise distinct marker laws have maximum pairwise Bhattacharyya coefficient $`\zeta=\max_{j\ne k}\sum_y\sqrt{Q_j(y)Q_k(y)}<1`$. After $`M`$ marker observations per site, maximum likelihood gives probability at most $`2n\zeta^M`$ of any wrong site. Choose $`M=O_Q(\log(n/\delta))`$ so that this is at most $`\delta/3`$. The case $`\zeta=0`$ allows one observation. These marker-only specimens can be partitioned into blocks of size at most $`b`$. Their records are consulted only at final decoding.
+To decode, use a disjoint, predetermined group of specimens for marker-only word identification. Their payloads are discarded and their copies count toward the budget. Pairwise distinct marker laws have maximum pairwise Bhattacharyya coefficient $`\zeta=\max_{j\ne k}\sum_y\sqrt{Q_j(y)Q_k(y)}\lt 1`$. After $`M`$ marker observations per site, maximum likelihood gives probability at most $`2n\zeta^M`$ of any wrong site. Choose $`M=O_Q(\log(n/\delta))`$ so that this is at most $`\delta/3`$. The case $`\zeta=0`$ allows one observation. These marker-only specimens can be partitioned into blocks of size at most $`b`$. Their records are consulted only at final decoding.
 
 With the identified word, keep the signal records that contain its Pauli observable and recover the corresponding eigenvalue. For the true word the eligibility event depends on the markers and class choice alone, and every retained sign has mean $`c`$. At fixed word the signs are independent across blocks, conditional on the eligibility choices. For example, let
 
@@ -96,7 +96,7 @@ ne_{b(n)}=O(\log n).
 
 Indeed, identifying the axis via maximum likelihood and omitting one of the other axes gives $`e_b\le2\zeta^b`$. If the criterion fails, there is a subsequence with $`ne_b/\log n\to\infty`$, and on that subsequence $`b=O(\log n)`$. The converse then wins because $`-\log(1-e_b)\ge e_b`$ and $`\log A_b(c_0)=O_{c_0}(b)`$. Conversely, one can truncate the actual block size at $`O_Q(\log n)`$ using $`e_r\le2\zeta^r`$. For either the original cap or the truncated size, the stated criterion ensures $`\beta_r^{-n}`$ is polynomial because $`e_r\le1/3`$.
 
-Goldar et al.'s original ternary markers are the commuting qubit states $`(I-uZ)/2`$, $`I/2`$ and $`(I+uZ)/2`$. In the common eigenbasis, their laws are Bernoulli with parameters $`(1-u)/2`$, $`1/2`$ and $`(1+u)/2`$. Goldar et al. take $`0<u<1/2`$; the calculation below holds for fixed $`0<u<1`$. Their paper establishes the finite-accuracy separation for single-copy measurements and explicitly asks what happens when collective multicopy measurements are permitted. [Goldar et al., Sections V and VIII-C](https://arxiv.org/html/2610.38922v1)
+Goldar et al.'s original ternary markers are the commuting qubit states $`(I-uZ)/2`$, $`I/2`$ and $`(I+uZ)/2`$. In the common eigenbasis, their laws are Bernoulli with parameters $`(1-u)/2`$, $`1/2`$ and $`(1+u)/2`$. Goldar et al. take $`0\lt u\lt 1/2`$; the calculation below holds for fixed $`0\lt u\lt 1`$. Their paper establishes the finite-accuracy separation for single-copy measurements and explicitly asks what happens when collective multicopy measurements are permitted. [Goldar et al., Sections V and VIII-C](https://arxiv.org/html/2610.38922v1)
 
 Let $`\alpha_b=\tfrac12\sum_z\min\{Q_X^{\otimes b}(z),Q_Z^{\otimes b}(z)\}`$ be the symmetric binary error for distinguishing the two extreme laws, and let
 
@@ -130,6 +130,6 @@ e_1=\frac{1-u}{3-u},\qquad
 \beta_1^{-n}=\left(\frac{3-u}{2}\right)^n .
 ```
 
-This is the sharp exponential specimen order for fixed-accuracy signed estimation with single-copy global measurements. The finite-contrast proof also applies when the full estimation interval includes the endpoints $`c=\pm1`$, by taking an interior pair $`\pm c_0`$ with $`\epsilon<c_0<1`$ for the lower bound.
+This is the sharp exponential specimen order for fixed-accuracy signed estimation with single-copy global measurements. The finite-contrast proof also applies when the full estimation interval includes the endpoints $`c=\pm1`$, by taking an interior pair $`\pm c_0`$ with $`\epsilon\lt c_0\lt 1`$ for the lower bound.
 
 The resource is specimens inside predetermined experiments without cross-block control. The model allows arbitrary within-block joint measurements in the converse and gives a one-payload implementation in the upper bound. The result leaves the minimum coherent storage, connectivity-dependent gate cost and noncommuting marker models open.
