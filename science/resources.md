@@ -4,13 +4,16 @@ The result compares specimen budgets for one scalar learning task. It charges ev
 
 The source and experiment classes are specified in the [model](model.md). Explicit finite costs and the decoding guarantee are proved in [attaining measurements](attaining_measurements.md).
 
+
+The tables below follow the erasure protocol. For noisy markers, the receiver additionally computes or precomputes an omission rule and allocates a separate set of marker observations for final word identification. The [general protocol](noisy-markers.md#measuring-with-two-retained-axes-at-every-site) charges both that allocation and every rejected block.
+
 ## Supplied information and charged specimens
 
 The learner knows $`n`$, the erasure probability $`q\in(0,1)`$, the source family, the allowed block cap $`b`$, the accuracy $`\epsilon`$, and the failure probability $`\delta`$. It does not know the fixed hidden axis word $`a`$ or the contrast $`c`$. Markers reveal axes only through the stated independent erasure channel. A classical description of the source's hidden word is not supplied.
 
 One specimen contains an $`n`$-qubit payload and $`n`$ four-level classical markers. Encoding each marker in two computational-basis qubits uses $`3n`$ physical qubits per specimen. The unused symbol capacity of this encoding supplies no extra oracle or retained advice. Equivalently, the marker can be a native classical four-symbol register; the scientific bounds are the same.
 
-For a working block size $`r\le b`$ and $`T`$ blocks, the deterministic specimen charge is
+For a working block size $`r\le b`$ and `T` blocks, the deterministic specimen charge is
 
 ```math
 N=rT.
@@ -36,7 +39,7 @@ For each block, read all markers, retain their revealed-axis union, and use one 
 
 | Resource | Explicit attaining cost |
 |---|---|
-| Source specimens | $`N=rT`$, including every unused payload and every rejected record. |
+| Source specimens | `N = rT`, including every unused payload and every rejected record. |
 | Marker readout and processing | $`O(nr)`$ local symbol operations per block; $`O(nN)`$ in total. |
 | Payload readout | One $`n`$-qubit payload per block, with $`n`$ binary outcomes. |
 | Known single-qubit gates | $`O(n)`$ Clifford gates per measured payload. |
@@ -46,7 +49,7 @@ For each block, read all markers, retain their revealed-axis union, and use one 
 | Stored classical record | $`O(n)`$ bits per block after marker compression, or $`O(nT)`$ bits for a direct full-record implementation. |
 | Quantum output | None; the payload is measured and the output is one scalar. |
 
-The GHZ stabilizer membership check is linear in $`K`$. In its standard frame, a full-support Pauli is covered when it is an even-$`Y`$ $`X/Y`$ word, or the all-$`Z`$ word at even $`K`$. Local Clifford signs and the product of the relevant generator outcomes determine its eigenvalue. No exponentially large stabilizer table is required.
+The GHZ stabilizer membership check is linear in $`K`$. In its standard frame, a full-support Pauli is covered when it is an even-$`Y`$ $`X/Y`$ word, or the all-`Z` word at even $`K`$. Local Clifford signs and the product of the relevant generator outcomes determine its eigenvalue. No exponentially large stabilizer table is required.
 
 The gate count assumes all-to-all connectivity. A prescribed geometric architecture would require its own routing, depth, and noise account. Single-qubit Clifford changes and the GHZ basis can be implemented exactly in an ideal Clifford gate set; no precision-dependent arbitrary rotation is needed by the receiver's measurement.
 

@@ -1,13 +1,14 @@
 # Quantum Learning Batch Threshold
 
-This repository studies signed scalar learning from IID native marked-Pauli specimens. A fixed hidden full-support axis word selects the payload correlation. Each known-basis classical marker reveals its axis independently with probability q, otherwise reports an erasure.
+This repository studies signed scalar learning from IID native marked-Pauli specimens with a fixed hidden full-support axis word. For known finite classical marker laws, let e_b be the local minimax error of excluding the true axis from b marker observations.
 
-The central result is a specimen/batch law under the absence of control between preplanned blocks: polynomial fixed-error learning iff n(1-q)^b=O(log n). For each fixed block cap b the exponential specimen base beta_b^(-n), beta_b=1-(1-q)^b/3, matches. A local single-copy learner with one feedback round uses O(log n) specimens at fixed accuracy.
+For pairwise distinct marker laws, polynomial fixed-error specimen cost is possible iff n e_b = O(log n). At fixed b with e_b > 0, the optimal exponential order is (1-e_b)^(-n). At e_b=0, the upper bound still counts final word identification. Goldar's original commuting-qubit markers have e_b = Theta_u(b^(-1/2) exp(-C_u b)), C_u = -log(1-u^2)/2. Their b=1 base is (3-u)/2 per payload qubit. Erasure markers give e_b=(1-q)^b/3. Local single-copy learning with one feedback round uses O(log n) specimens for the stated known distinct markers at fixed accuracy.
 
 ## Reading routes
 
 - Story and results: README.md, then science/README.md.
-- Exact source, input/output promises, signed parameter interval, seed/partition rules and resource definitions: science/model.md.
+- General marker law, finite weighted converse, actual protocol, and original Goldar source: science/noisy-markers.md.
+- Exact erasure source, input/output promises, signed parameter interval, seed/partition rules and resource definitions: science/model.md.
 - Finite lower bound against arbitrary collective block POVMs: science/collective_converse.md. Its authoritative proof uses an odd-tensor logical Pauli algebra, signed partial-trace contraction, marker conditioning, final hidden-word revelation, additive KL and Pinsker.
 - Attaining finite protocol and unconditional failure accounting: science/attaining_measurements.md. It gives GHZ full-support counts, the exact marker-averaged acceptance probability, classical filtering and an ideal-decoder union-bound proof.
 - A complete two-qubit source/marker/Bell-measurement example: science/worked_example.md.
@@ -26,7 +27,7 @@ The bridge distinguishes textbook foundations from the project's marked source, 
 
 No earlier marker or payload outcome may choose a later block's measurement. Internal marker-dependent control is allowed within a block. Every final classical record may be processed jointly. No coherent carrier or shared entangled ancilla connects the blocks.
 
-The parameter is signed and the comparison domain contains fixed opposite alternatives. Magnitude-only or positive-only estimation is a different task. q, accuracy and confidence are fixed in the asymptotic iff; the finite inequalities state their parameters explicitly.
+The parameter is signed and the comparison domain contains fixed opposite alternatives. Magnitude-only or positive-only estimation is a different task. the marker laws, accuracy and confidence are fixed in the asymptotic iff; the finite inequalities state their parameters explicitly.
 
 b counts source specimens in a preplanned experiment, not simultaneous quantum width, holding time, entanglement depth or circuit depth. The attaining implementation can discard early payloads and use the final payload after reading the block's markers. GHZ entanglement occurs only within that payload. The lower nevertheless permits arbitrary collective b-copy effects.
 

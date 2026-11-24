@@ -1,23 +1,10 @@
 # Scientific account
 
-A quantum specimen can contain a simple scalar correlation whose useful measurement basis is initially unknown. Classical markers gradually reveal that basis. Feedback lets a learner use the early instructions to choose later measurements. Without feedback between independent experiments, a larger joint measurement block is one way to collect instructions before choosing its payload measurement.
+A specimen carries a signed scalar in a Pauli correlation. Its classical markers give local clues about the hidden Pauli word. Feedback uses early clues to choose later settings. A preplanned batch can use only its own markers for that decision.
 
-This project determines the batch threshold for a marked-Pauli source with independent erasures. For fixed marker reveal probability and fixed signed-contrast accuracy, arbitrary preplanned blocks of at most $`b`$ specimens admit polynomial specimen cost exactly when
+For known finite classical marker laws, let e_b be the minimax error of ruling out one local axis after b observations. The [noisy-marker theorem](noisy-markers.md) gives a finite converse against arbitrary collective block POVMs and a GHZ measurement achieving the same exponential base with one payload per signal block. Three distinct laws permit polynomial specimen cost exactly when ne_b is of logarithmic order or smaller. Goldar et al.'s commuting noisy qubit markers give an explicit threshold and a sharp fixed-accuracy single-copy base.
 
-```math
-n(1-q)^b=O(\log n).
-```
-
-For every fixed block size, the exponential base is matched:
-
-```math
-N_{\min}
-=\Theta_{b,q,c_0}\left[
-\left(1-\frac{(1-q)^b}{3}\right)^{-n}
-\right].
-```
-
-The converse permits arbitrary collective block POVMs. The attaining measurement uses each block's markers and a randomized GHZ stabilizer basis on one payload; it does not entangle different payload specimens. Adaptive local measurements with one feedback round need only $`O(\log n)`$ specimens at fixed accuracy.
+With erasure probability 1−q, the error of ruling out one axis is (1−q)^b/3. The [erasure account](phase_boundary.md) works through that case, including its detailed coverage calculation and feedback comparison.
 
 ## One connected argument
 
@@ -25,7 +12,8 @@ The converse permits arbitrary collective block POVMs. The attaining measurement
 2. [Collective converse](collective_converse.md): odd tensor powers retain a logical Pauli algebra; conditioning on erased markers and summing KL across preplanned blocks gives a finite fixed-contrast minimax bound.
 3. [Attaining measurements](attaining_measurements.md): GHZ stabilizer coverage, unconditional filtering, exact coverage probability and finite sample budget; the adaptive local comparison is included.
 4. [Phase boundary](phase_boundary.md): matching fixed-block exponential base and the growing-cap polynomial-feasibility criterion.
-5. [Resources and interpretation](resources.md): specimen count, implementation and classical costs, control restrictions and what the batch parameter means.
+5. [Noisy markers](noisy-markers.md): the posterior-weighted converse, two-axis GHZ measurement, and the threshold for the original noisy-qubit source.
+6. [Resources and interpretation](resources.md): specimen count, implementation and classical costs, control restrictions and what the batch parameter means.
 
 A [complete two-qubit example](worked_example.md) shows the source probabilities, three marker cases, Bell-basis signs and final filtering.
 
@@ -33,6 +21,6 @@ The input states are fully separable. Known-axis measurement would be a Bernoull
 
 ## Attribution and evidence
 
-The marked-Pauli adaptivity mechanism and earlier one-copy and two-copy separations are inherited. The addition is the growing-batch finite-contrast frontier and its matching coverage construction. [Related work](../references/RELATED_WORK.md) compares the closest statements and [the bibliography](../references/references.bib) gives their versions.
+The marked-Pauli adaptivity mechanism and earlier one-copy and two-copy separations are inherited. The batch protocol, finite-contrast converse, and minimax marker-exclusion law determine the boundary for this source and control model. [Related work](../references/RELATED_WORK.md) compares the closest statements and [the bibliography](../references/references.bib) gives their versions.
 
 [Verification](../verification/README.md) separates exact stabilizer and probability identities, finite matrix checks and protocol simulations from the general analytical proof. The result is an information-theoretic law for the specified source and control structure, not an implementation or priority certificate.

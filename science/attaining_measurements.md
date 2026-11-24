@@ -38,7 +38,7 @@ g_0=X^{\otimes k},\qquad
 g_j=Z_1Z_j\quad(2\le j\le k).
 ```
 
-They define a complete GHZ stabilizer basis. Measure them after independent uniformly random single-qubit Clifford basis changes on the $`k`$ unresolved sites. Equivalently, apply the inverse local Clifford changes, apply the inverse GHZ preparation circuit, and measure every qubit in $`Z`$. Under all-to-all connectivity the GHZ part needs $`k-1`$ CNOT gates and one Hadamard gate. At $`k=1`$, it is simply an $`X`$-basis measurement before the random local basis change.
+They define a complete GHZ stabilizer basis. Measure them after independent uniformly random single-qubit Clifford basis changes on the $`k`$ unresolved sites. Equivalently, apply the inverse local Clifford changes, apply the inverse GHZ preparation circuit, and measure every qubit in `Z`. Under all-to-all connectivity the GHZ part needs $`k-1`$ CNOT gates and one Hadamard gate. At $`k=1`$, it is simply an $`X`$-basis measurement before the random local basis change.
 
 Ignoring their recorded signs, the stabilizer group contains exactly
 
@@ -46,7 +46,7 @@ Ignoring their recorded signs, the stabilizer group contains exactly
 f_k=2^{k-1}+\mathbf 1_{\{k\ \mathrm{even}\}}
 ```
 
-Pauli words with full support. To count them, the diagonal subgroup consists of all even-weight $`Z`$ words. Multiplying this subgroup by $`X^{\otimes k}`$ gives $`2^{k-1}`$ full-support $`X/Y`$ words. The diagonal subgroup contributes the additional full-support word $`Z^{\otimes k}`$ precisely when $`k`$ is even.
+Pauli words with full support. To count them, the diagonal subgroup consists of all even-weight `Z` words. Multiplying this subgroup by $`X^{\otimes k}`$ gives $`2^{k-1}`$ full-support $`X/Y`$ words. The diagonal subgroup contributes the additional full-support word $`Z^{\otimes k}`$ precisely when $`k`$ is even.
 
 Independent random local Cliffords map any fixed full-support Pauli word uniformly over the $`3^k`$ axis words, up to known signs. Therefore a fixed true unresolved Pauli belongs to the recorded randomized stabilizer group with probability
 
@@ -72,14 +72,14 @@ After data collection, combine all marker records to recover the hidden axis wor
 
 When the full word is recovered, examine each block's stored basis. Keep its payload record if the unresolved part of the true Pauli lies in that block's randomized GHZ stabilizer group. Compute that Pauli's eigenvalue from the recorded generator outcomes, including the local-Clifford and stabilizer signs. Multiply it by the measured parity on the known-axis sites. Call the resulting sign $`W\in\{-1,+1\}`$.
 
-Membership and sign decoding take linear time in the number of unresolved sites. In the standard GHZ frame, a full-support word is covered exactly when it is an $`X/Y`$ word with an even number of $`Y`$ factors, or it is the all-$`Z`$ word at even $`k`$. For an $`X/Y`$ word whose $`Y`$ positions form $`S`$, its eigenvalue is
+Membership and sign decoding take linear time in the number of unresolved sites. In the standard GHZ frame, a full-support word is covered exactly when it is an $`X/Y`$ word with an even number of $`Y`$ factors, or it is the all-`Z` word at even $`k`$. For an $`X/Y`$ word whose $`Y`$ positions form $`S`$, its eigenvalue is
 
 ```math
 (-1)^{|S|/2}\,z_0
 \prod_{j\in S\setminus\{1\}}z_j,
 ```
 
-where $`z_0,z_j`$ are the outcomes of $`g_0,g_j`$. For the covered all-$`Z`$ word, it is $`\prod_{j=2}^k z_j`$. The local Clifford changes supply an additional known sign.
+where $`\mathrm{z}_0,\mathrm{z}_j`$ are the outcomes of $`g_0,g_j`$. For the covered all-`Z` word, it is $`\prod_{j=2}^k z_j`$. The local Clifford changes supply an additional known sign.
 
 Acceptance depends only on the markers and the randomly chosen basis, not on the payload outcomes. On an accepted record, the decoded observable on the entire payload is exactly $`P_a`$. Consequently, for every fixed $`a,c`$ and every accepted marker/basis choice,
 
@@ -135,7 +135,7 @@ T=\left\lceil
 \right\rceil.
 ```
 
-There are exactly $`N=rT`$ source specimens. After successful marker recovery, average the accepted signs; return zero if none were accepted. Projection of the estimate onto the promised interval can only reduce its absolute error.
+There are exactly `N = rT` source specimens. After successful marker recovery, average the accepted signs; return zero if none were accepted. Projection of the estimate onto the promised interval can only reduce its absolute error.
 
 Here is a proof that does not condition the sign analysis on successful global marker recovery. First define an ideal decoder that is supplied the true hidden word only for its final filtering step. Its measurements are the same as those of the actual protocol. For every fixed $`a,c`$, its acceptance indicators are independent Bernoulli variables with probability $`p_r`$. Conditional on their index set, the retained signs are independent, each with mean $`c`$. Thus the ideal accepted count $`M`$ is binomial with mean $`\mu=Tp_r`$.
 

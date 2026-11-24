@@ -165,7 +165,13 @@ For the example's $`q=1/2`$, the left side is $`n2^{-b}`$. Each additional speci
 
 The signed task includes opposite fixed contrasts and an accuracy smaller than their magnitude. The sign-based necessity result is not a theorem for a positive-only interval. Nor does $`b`$ measure minimum coherent width or holding time: an attaining experiment can collect its markers and measure only its final payload, with no quantum carrier between arrivals. The [resource account](../science/resources.md) keeps these distinctions visible.
 
-## 7. Continue through the project
+## 7. From erasures to noisy markers
+
+An erasure leaves all three axes equally likely. A noisy observation supplies a posterior with three possibly different weights. Sort those weights, then decompose the posterior into a mixture of one, two and three uniform candidates. Only the three-axis component pays the odd-Pauli incompatibility bound. After averaging the markers, the loss of useful measurement coverage is the minimax probability of omitting the true axis.
+
+Go through the [weighted converse](../science/noisy-markers.md#the-posterior-bound-for-arbitrary-joint-measurements) and use the [two-axis GHZ measurement](../science/noisy-markers.md#measuring-with-two-retained-axes-at-every-site) to track where the omitted axis and final word estimate enter the protocol. The [Goldar example](../science/noisy-markers.md#polynomial-budgets-and-goldars-noisy-qubit-markers) connects this finite decision problem to the logarithmic batch threshold.
+
+## 8. Continue through the project
 
 The [30-milestone map](MILESTONES.md) joins the textbook objects to these project-specific steps. It supplies understanding targets and dependencies, rather than a replacement table of contents for the book.
 

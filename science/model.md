@@ -4,6 +4,8 @@
 
 A source carries a weak, global correlation. Classical markers say how to measure that correlation, but each marker can be erased. A learner with feedback can collect the instructions and then change its measurement. A learner committed to independent, preplanned measurement blocks can use instructions found inside a block, but cannot use one block's record to control another. The question is how large those blocks must be.
 
+The erasure source below makes measurement information explicit. The [noisy-marker theorem](noisy-markers.md) allows any known finite classical marker laws and keeps the same payload, signed task, and experiment schedule.
+
 ## Source specimens
 
 Let $`n\geq1`$ and $`a=(a_1,\ldots,a_n)\in\{X,Y,Z\}^n`$. The axis word is fixed and unknown throughout the experiment. Put

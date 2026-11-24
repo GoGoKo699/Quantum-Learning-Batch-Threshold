@@ -40,6 +40,8 @@ for a finite constant $`C_q`$ depending only on $`q`$ in the stated accuracy/con
 
 The finite prefactor $`A_b(c_0)`$ grows exponentially in $`b`$. Thus these bounds do not identify every finite optimum or the exact polynomial exponent at the transition. They do determine the following laws.
 
+The formulas on this page use erasure markers. For arbitrary finite classical markers and Goldar's original noisy-qubit source, see the [marker-exclusion threshold](noisy-markers.md#polynomial-budgets-and-goldars-noisy-qubit-markers).
+
 ## Fixed blocks: the exponential base matches
 
 For every fixed $`b\geq1`$, $`q\in(0,1)`$, nonzero contrast and constant confidence, sign testing has

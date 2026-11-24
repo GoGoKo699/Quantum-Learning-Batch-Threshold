@@ -4,21 +4,15 @@
 
 ## What this account adds
 
-The question is how many source copies a preplanned experiment may pool before its payload measurement, when earlier experiments cannot supply feedback. The source has a fixed hidden Pauli word, an interior signed contrast, and independent erasure markers. Measurements may be arbitrary within a block of at most $`b`$ source copies; no outcome from another block may change that block's measurement.
-
-For fixed marker reveal probability $`q\in(0,1)`$, define
-
-```math
-t_b=(1-q)^b,\qquad \beta_b=1-\frac{t_b}{3}.
-```
-
-The finite fixed-sign converse controls arbitrary global block POVMs through an odd-subset logical-Pauli reduction. A marker-conditioned GHZ-basis measurement attains the same $`\beta_b^n`$ coverage scale up to the stated prefactors. Together they establish that polynomial copy complexity is possible exactly when $`n(1-q)^b=O(\log n)`$. One classical feedback round instead permits local single-copy learning with logarithmically many source copies. These conclusions concern this source and measurement model; they do not establish a general training speedup or an optimal memory width.
+The task is to estimate a signed Pauli contrast with a fixed hidden word and known, independently noisy classical markers. Earlier observations cannot choose a later block's measurement. The [noisy-marker theorem](../science/noisy-markers.md) identifies the minimax local hypothesis-exclusion error as the parameter controlling the full batch exponent. A posterior-weighted odd-Pauli bound and a two-axis GHZ measurement give the two sides. The [erasure case](../science/phase_boundary.md) gives a worked specialization.
 
 ## Marker information and single-copy feedback
 
 Goldar, Qin, Zhu, Gong and Wakin, [arXiv:2610.38922v1](https://arxiv.org/abs/2610.38922v1), already construct a ternary hidden-Pauli marker–signal family with a scalar parameter, separable inputs, a one-round adaptive local protocol, and an exponential separation from nonadaptive arbitrary global **single-copy** measurements. Their Theorems V.1 and V.10 distinguish the local-asymptotic and finite-accuracy statements. Section II-B excludes measurements joining different copies; Section VIII-C explicitly raises the multicopy question.
 
-That is the immediate scientific antecedent. This repository inherits the marker-directed incompatibility mechanism and changes the marker channel to exact classical erasures. Its addition is the growing-block finite-contrast converse, matching coverage construction, and resulting polynomial-learnability boundary. It does not prove that boundary for the original paper's noisy-qubit marker channel.
+The present [finite-accuracy theorem](../science/noisy-markers.md#polynomial-budgets-and-goldars-noisy-qubit-markers) applies to their original commuting qubit markers. It gives the exact single-copy exponential base, the growing-block polynomial threshold, and an attaining protocol. Their local-asymptotic minimax problem uses a separate accuracy criterion.
+
+Mishra, Nussbaum and Wilde define classical antidistinguishability (hypothesis exclusion) and identify its asymptotic error exponent as a multivariate Chernoff divergence in Theorem 7. Here the finite-block minimax exclusion problem supplies a parameter for another task: estimating a signed quantum signal. [Primary paper](https://arxiv.org/abs/2309.03723v2)
 
 ## Signed Pauli information and two-copy adaptation
 
@@ -38,7 +32,7 @@ We assume neither conjugate-state preparation nor a controlled unknown-state ora
 
 Nöller, Tran, Gachechiladze and Kueng, [arXiv:2510.08070v2](https://arxiv.org/abs/2510.08070v2), establish an infinite hierarchy of multicopy learning tasks. The current full text's Result 4, Theorem 9 and Corollary 12 cover each local dimension $`d\geq2`$ not divisible by four: Weyl–Heisenberg amplitude estimation is hard for **adaptive** measurements on fewer than $`d`$ copies and efficient with $`d`$ copies, at fixed nontrivial accuracy. The local dimension and observable family change with the degree. These are amplitudes of linear expectation values; “degree” denotes the required number of simultaneous copies, not the polynomial degree of a state functional.
 
-This is prior art for sharp multicopy thresholds. Our distinction is a fixed qubit signal with classical erasure markers, one signed parameter, and a feedback-versus-batch-size boundary: feedback already makes the single-copy experiment efficient. The hierarchy's adaptive lower bound therefore does not transfer to this marked source. The full v2 statement is broader than the prime/square-free summary still visible on some abstract pages.
+This is prior art for sharp multicopy thresholds. Our distinction is a fixed qubit signal with classical markers, one signed parameter, and a feedback-versus-batch-size boundary: feedback already makes the single-copy experiment efficient. The hierarchy's adaptive lower bound therefore does not transfer to this marked source. The full v2 statement is broader than the prime/square-free summary still visible on some abstract pages.
 
 ## Foundations used without a novelty claim
 

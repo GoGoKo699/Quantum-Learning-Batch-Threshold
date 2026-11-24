@@ -20,6 +20,8 @@ from pathlib import Path
 
 import numpy as np
 
+from check_noisy_markers import check_all as check_noisy_markers
+
 SEED = 20261115
 TOL = 3e-11
 PAULI = {
@@ -411,7 +413,8 @@ def check_joint_kl(rng):
 def input_hashes(repo):
     paths = sorted((repo / "science").glob("*.md"))
     require(bool(paths), "No science files found for input hashing")
-    paths.append(Path(__file__).resolve())
+    checker = Path(__file__).resolve()
+    paths.extend([checker, checker.with_name("check_noisy_markers.py")])
     return {str(path.relative_to(repo)): hashlib.sha256(path.read_bytes()).hexdigest()
             for path in paths}
 
@@ -431,6 +434,7 @@ def main():
         ("odd_tensor_pauli_representation", check_odd_representation),
         ("odd_subset_response_and_signed_reduction", check_pauli_response),
         ("finite_contrast_general_joint_povm_kl", check_joint_kl),
+        ("noisy_marker_exclusion_and_coverage", lambda _: check_noisy_markers()),
     ):
         test_started = time.perf_counter()
         try:
@@ -451,7 +455,7 @@ def main():
         "software": {"python": platform.python_version(), "numpy": np.__version__,
                      "platform": platform.platform()},
         "diagnostic_scope": {
-            "exact": "Binary stabilizer enumeration and rational binomial identities at the listed sizes",
+            "exact": "Binary stabilizer enumeration, rational marker-exclusion certificates and binomial identities at listed sizes",
             "numerical": "Explicit raw matrix/operator, Born-law, odd-Pauli and joint-POVM checks at the listed small dimensions",
             "absolute_tolerance": TOL,
             "not_established": [

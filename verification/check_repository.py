@@ -203,7 +203,7 @@ def check_science_report(repo):
     require(report.get("tests") and all(test.get("passed") is True for test in report["tests"]),
             "Saved scientific report has a missing or failed test group")
     expected = {str(path.relative_to(repo)) for path in (repo / "science").glob("*.md")}
-    expected.add("verification/check_science.py")
+    expected.update({"verification/check_science.py", "verification/check_noisy_markers.py"})
     recorded = report.get("input_sha256", {})
     require(set(recorded) == expected,
             "Saved scientific report's input set differs from current science files/checker")

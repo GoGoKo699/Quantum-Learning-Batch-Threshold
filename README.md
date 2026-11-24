@@ -1,26 +1,22 @@
 # Quantum Learning Batch Threshold
 
-**How large must a joint measurement batch be to replace feedback during quantum learning?** For a source with a hidden Pauli signal and independently erased classical measurement instructions, this project determines when preplanned block measurements have polynomial specimen cost.
+**How many specimens must a preplanned experiment pool to replace feedback during quantum learning?** A source encodes a signed scalar in a hidden Pauli string. Each site's classical markers are noisy instructions about which Pauli axis to measure. The learner may read a block's own markers before measuring its payload, and an arbitrary joint measurement is allowed inside each block. Measurements in different blocks are fixed independently of earlier outcomes. The decoder can combine all classical records at the end.
 
-Let $`n`$ be the payload qubit count, $`q\in(0,1)`$ the fixed probability that a local marker reveals its axis, and $`b`$ the maximum specimens in a preplanned joint experiment. For fixed accuracy and confidence in the signed-contrast task,
+Let n be the number of payload qubits and b the block cap. At each site, let e_b be the smallest worst-case probability of mistakenly ruling out the true axis after reading b markers. For three distinct marker laws and fixed accuracy and confidence,
 
 ```math
 \text{polynomial specimen cost}
 \quad\Longleftrightarrow\quad
-n(1-q)^b=O(\log n).
+ne_b=O(\log n).
 ```
 
-The nonadaptive learner may use **any collective POVM inside each block**, including control based on that block's own markers. No earlier block outcome controls another block, and no coherent carrier connects the blocks. All records may be decoded jointly at the end.
-
-| Regime | Supported specimen law |
+| Marker model | What the batch law gives |
 |---|---|
-| Every fixed batch cap $`b`$ | Matching exponential order $`\Theta_{b,q,c_0}(\beta_b^{-n})`$, where $`\beta_b=1-(1-q)^b/3`$ |
-| Growing cap | Polynomial exactly when the residual instructions $`n(1-q)^b`$ are at most logarithmic |
-| One classical feedback round | Local single-copy measurements use $`O_q(\log n)`$ specimens at fixed accuracy |
+| Finite classical markers | At fixed b with positive omission error, the optimal specimen count has matching exponential order with base $`1/(1-e_b)`$ per payload qubit. |
+| Goldar et al.'s noisy-qubit markers | For fixed strength u, the logarithmic transition has coefficient $`1/C_u`$, where $`C_u=-\tfrac12\log(1-u^2)`$. The lower edge for polynomial cost is shifted by $`-\tfrac32\log\log n`$ in $`C_u b`$. The single-copy base is $`(3-u)/2`$. |
+| Erasure markers revealing the axis with probability q | The omission error is $`(1-q)^b/3`$, recovering the erasure threshold. |
 
-The source states are fully separable. The attaining block protocol reads its own markers, measures one payload in a randomized GHZ stabilizer basis, and filters classical records after the full marker transcript identifies the hidden word. It matches the converse's exponential base without entangling different payload specimens. Every unused payload, erasure and rejected record is charged.
-
-The batch cap counts inputs in a preplanned experiment. It does not establish a minimum coherent width or holding time: the implementation can discard early payloads and measure the final one after collecting the block's markers. The learning domain includes both positive and negative contrasts; the sign converse does not assert the same boundary for a positive-only task.
+An attaining experiment rules out one axis per site, then measures one payload in a randomized GHZ stabilizer basis adapted to the two remaining axes. Final decoding identifies the true word and extracts its signed parity from compatible records. The resource count includes every marker copy, discarded payload and rejected record. With one round of feedback, separate marker localization followed by local Pauli measurements uses logarithmically many specimens at fixed accuracy.
 
 ## Read the science
 
@@ -29,6 +25,7 @@ Start with the [scientific overview](science/README.md).
 | Question | Authoritative account |
 |---|---|
 | What is supplied, what must be learned, and which feedback is allowed? | [Model](science/model.md) |
+| How do noisy markers set the batch threshold? | [Marker exclusion theorem and Goldar example](science/noisy-markers.md) |
 | Why can arbitrary collective block measurements not avoid the lower bound? | [Finite converse](science/collective_converse.md) |
 | How do GHZ stabilizers attain the exponential coverage factor? | [Attaining measurements](science/attaining_measurements.md) |
 | Where is the logarithmic batch threshold, including its transition scale? | [Phase boundary](science/phase_boundary.md) |
@@ -36,7 +33,7 @@ Start with the [scientific overview](science/README.md).
 | What do preparation, gates, records and final decoding cost? | [Resources](science/resources.md) |
 | Which ingredients and earlier separations are inherited? | [Related work](references/RELATED_WORK.md), [bibliography](references/references.bib) |
 
-Goldar and coauthors' [marked single-copy separation](https://arxiv.org/abs/2610.38922v1) is the immediate antecedent. Chen, Gong and Zhang's [two-copy separation](https://arxiv.org/abs/2412.19022v1) supplies closely related signed-Pauli information bounds. This project's addition is the growing-batch finite-contrast frontier and matching coverage construction. It does not establish the erasure-marker law for a different noisy-marker channel.
+Goldar and coauthors established the original [single-copy separation](https://arxiv.org/abs/2610.38922v1) and asked what changes when multicopy measurements are allowed. The [noisy-marker theorem](science/noisy-markers.md) gives the finite-accuracy batch boundary for their source. The [comparison with earlier work](references/RELATED_WORK.md) credits the inherited Pauli and classical hypothesis-exclusion tools.
 
 ## Learn the argument
 
@@ -57,7 +54,7 @@ The [verification guide](verification/README.md) identifies exact stabilizer and
 
 ## Scope
 
-The source is IID with one fixed hidden word, independent orthogonal erasure markers and fixed known reveal probability. Receiver operations are ideal. The result charges specimens and gives an explicit attaining implementation under all-to-all connectivity. General marker channels, optimal finite constants, the precise polynomial degree at the transition, architecture-dependent depth, source drift and receiver noise require their own analysis. No end-to-end training-runtime advantage is asserted.
+The source supplies IID specimens with one fixed hidden word and independent markers in a known common basis. The result concerns signed contrast and ideal receiver operations. The batch cap counts specimens assigned to one experiment. Minimum coherent width, storage time, noncommuting markers, and hardware-dependent costs remain open.
 
 ## Purpose and contact
 
