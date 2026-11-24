@@ -37,7 +37,6 @@ These structural checks support navigation and reproducibility. Scientific meani
 | Odd tensor Pauli representation | Odd copy counts 1, 3 and 5 | Construct tensor Pauli matrices and an independent parity/complement basis; compare each logical generator and its $`Y`$ sign |
 | Odd-subset response and signed known-site reduction | Listed small block effects and an explicit signed reduction | Evaluate raw matrix expectations, including a reduction with eigenvalues $`-1/2,+1/2`$, rather than assuming it is positive |
 | Finite-contrast joint-POVM bound | 10 block configurations, two nonzero contrasts each, Hilbert dimension at most 64 | Normalize random general joint POVMs independently, evaluate tensor-density Born laws, enumerate unresolved axes, and compare KL, chi-squared divergence and the analytical block bound |
-
 | Noisy markers and two-axis coverage | Finite rational marker laws, Goldar binomial counts through 64 draws, weighted Pauli and GHZ matrix checks | Enumerate finite dual regions, compare an explicit primal certificate, evaluate weighted odd-Pauli response and reconstruct commutation, coverage, and decoded signs |
 
 The suite runs the original erasure diagnostics and the [noisy-marker checks](check_noisy_markers.py). The numerical tolerance is $`3\times10^{-11}`$. Binary enumeration and rational identities are exact within their finite ranges; floating-point matrix tests are diagnostics. The maximum GHZ operator residual in the saved run is reported in its test group.
