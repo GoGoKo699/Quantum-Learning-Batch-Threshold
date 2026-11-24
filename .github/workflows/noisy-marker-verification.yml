@@ -18,8 +18,8 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 9
     env:
-      CAPTURE_REVISION: bdf95a0b22e093d070499a7f85ada167aa34106c
-      CAPTURE_TREE: 48414cc13cd1187d2c58cf7456d7c74d39f57094
+      CAPTURE_REVISION: 63274d0d6f6fc32addd9f5b975e7d2fc1185c416
+      CAPTURE_TREE: 640465b8f96069798d3cb2c29a6358d17db05438
     steps:
       - name: Check out the exact proposed source
         id: source
