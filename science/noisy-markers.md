@@ -2,7 +2,7 @@
 
 [Model](model.md) · [Finite-contrast converse](collective_converse.md) · [Attaining measurements](attaining_measurements.md) · [Related work](../references/RELATED_WORK.md)
 
-An erasure marker either reveals its Pauli axis or gives no information. With noisy markers every observation can leave all three axes possible. The quantity that controls the batch threshold is the error of ruling out one axis. The decoder can identify the full word after the measurements. During a measurement, two candidates per site already suffice to construct a commuting measurement that covers the true Pauli word with constant probability.
+An erasure marker either reveals its Pauli axis or gives no information. With noisy markers every observation can leave all three axes possible. The quantity that controls the batch threshold is the error of ruling out one axis. The decoder can identify the full word after the measurements. If the retained pair contains the true axis at every site, a randomized commuting measurement covers the true Pauli word with probability at least one half.
 
 ## Marker experiment and finite specimen bounds
 
