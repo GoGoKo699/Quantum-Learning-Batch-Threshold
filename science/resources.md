@@ -13,7 +13,7 @@ The learner knows $`n`$, the erasure probability $`q\in(0,1)`$, the source famil
 
 One specimen contains an $`n`$-qubit payload and $`n`$ four-level classical markers. Encoding each marker in two computational-basis qubits uses $`3n`$ physical qubits per specimen. The unused symbol capacity of this encoding supplies no extra oracle or retained advice. Equivalently, the marker can be a native classical four-symbol register; the scientific bounds are the same.
 
-For a working block size $`r\le b`$ and $`T`$ blocks, the deterministic specimen charge is
+For a working block size $`r\le b`$ and `T` blocks, the deterministic specimen charge is
 
 ```math
 N=rT.
@@ -39,7 +39,7 @@ For each block, read all markers, retain their revealed-axis union, and use one 
 
 | Resource | Explicit attaining cost |
 |---|---|
-| Source specimens | $`N=rT`$, including every unused payload and every rejected record. |
+| Source specimens | `N = rT`, including every unused payload and every rejected record. |
 | Marker readout and processing | $`O(nr)`$ local symbol operations per block; $`O(nN)`$ in total. |
 | Payload readout | One $`n`$-qubit payload per block, with $`n`$ binary outcomes. |
 | Known single-qubit gates | $`O(n)`$ Clifford gates per measured payload. |
@@ -49,7 +49,7 @@ For each block, read all markers, retain their revealed-axis union, and use one 
 | Stored classical record | $`O(n)`$ bits per block after marker compression, or $`O(nT)`$ bits for a direct full-record implementation. |
 | Quantum output | None; the payload is measured and the output is one scalar. |
 
-The GHZ stabilizer membership check is linear in $`K`$. In its standard frame, a full-support Pauli is covered when it is an even-$`Y`$ $`X/Y`$ word, or the all-$`Z`$ word at even $`K`$. Local Clifford signs and the product of the relevant generator outcomes determine its eigenvalue. No exponentially large stabilizer table is required.
+The GHZ stabilizer membership check is linear in $`K`$. In its standard frame, a full-support Pauli is covered when it is an even-$`Y`$ $`X/Y`$ word, or the all-`Z` word at even $`K`$. Local Clifford signs and the product of the relevant generator outcomes determine its eigenvalue. No exponentially large stabilizer table is required.
 
 The gate count assumes all-to-all connectivity. A prescribed geometric architecture would require its own routing, depth, and noise account. Single-qubit Clifford changes and the GHZ basis can be implemented exactly in an ideal Clifford gate set; no precision-dependent arbitrary rotation is needed by the receiver's measurement.
 

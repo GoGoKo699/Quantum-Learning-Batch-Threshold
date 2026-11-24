@@ -24,13 +24,13 @@ Each marker independently either reveals its correct symbol or reports an erasur
 | $`1`$ | $`1/2`$ | Measure the known axis; choose a random local Clifford frame on the unknown site | $`1/3`$ |
 | $`2`$ | $`1/4`$ | Measure in a randomly locally rotated Bell basis | $`1/3`$ |
 
-The last row is the two-qubit GHZ measurement. The ordinary Bell basis jointly measures the commuting operators $`X\otimes X`$ and $`Z\otimes Z`$. It also determines $`Y\otimes Y`$, because
+The last row is the two-qubit GHZ measurement. The ordinary Bell basis jointly measures the commuting operators $`X\otimes X`$ and `Z ⊗ Z`. It also determines $`Y\otimes Y`$, because
 
 ```math
 Y\otimes Y=-(X\otimes X)(Z\otimes Z).
 ```
 
-If their recorded eigenvalues are $`z_0,z_2`$, the $`Y\otimes Y`$ eigenvalue is $`-z_0z_2`$. This sign is why counting covered axis words alone is insufficient to implement the decoder.
+If their recorded eigenvalues are $`\mathrm{z}_0,\mathrm{z}_2`$, the $`Y\otimes Y`$ eigenvalue is $`-z_0z_2`$. This sign is why counting covered axis words alone is insufficient to implement the decoder.
 
 For an example of a covered random frame, take $`C=S\otimes H`$, where $`S=\mathrm{diag}(1,i)`$ and $`H`$ is Hadamard. Then
 
@@ -53,8 +53,8 @@ p_1=\frac14\cdot1+
 =\frac12.
 ```
 
-Every accepted decoded sign has distribution $`\Pr(W=w)=(1+wc)/2`$. For $`T`$ specimens, the ideal final decoder supplied the true word would therefore accept a binomial number of records with mean $`T/2`$. The actual decoder agrees with it whenever the full marker transcript recovers both axes. That failure probability is at most $`2\cdot2^{-T}`$.
+Every accepted decoded sign has distribution $`\Pr(W=w)=(1+wc)/2`$. For `T` specimens, the ideal final decoder supplied the true word would therefore accept a binomial number of records with mean $`T/2`$. The actual decoder agrees with it whenever the full marker transcript recovers both axes. That failure probability is at most $`2\cdot2^{-T}`$.
 
-The [finite guarantee](attaining_measurements.md#a-finite-sample-guarantee) prices this failure event, too few accepted records, and the mean-estimation error separately. All $`T`$ specimens are charged, including every rejected outcome. Nothing about a successful final marker transcript is used to control a later measurement.
+The [finite guarantee](attaining_measurements.md#a-finite-sample-guarantee) prices this failure event, too few accepted records, and the mean-estimation error separately. All `T` specimens are charged, including every rejected outcome. Nothing about a successful final marker transcript is used to control a later measurement.
 
 Here $`\beta_1=5/6`$. The general coverage bounds give $`25/72\leq p_1\leq25/36`$, consistent with the exact value $`1/2`$. The product-guess alternative would accept with probability $`4/9`$. This small example illustrates the GHZ coverage gain; it does not establish an asymptotic threshold or the optimal finite number of specimens.

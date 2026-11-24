@@ -302,18 +302,14 @@ Pinsker's inequality and the budget bound give
 \sqrt{\frac12
 D_{\mathrm{KL}}(\mathcal P_+\Vert \mathcal P_-)}
 \leq
-\sqrt{
-\frac{NA_b(c_0)\beta_b^n}{2b}
-}.
+\left(\frac{NA_b(c_0)\beta_b^n}{2b}\right)^{1/2}.
 ```
 
 Rearranging proves the finite theorem. Equivalently, the minimax error of any budget-$`N`$ protocol is bounded below by
 
 ```math
 \frac12\left[
-1-\sqrt{
-\frac{NA_b(c_0)\beta_b^n}{2b}
-}
+1-\left(\frac{NA_b(c_0)\beta_b^n}{2b}\right)^{1/2}
 \right]_+,
 \qquad [x]_+=\max\{x,0\}.
 ```

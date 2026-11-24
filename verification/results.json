@@ -1,5 +1,5 @@
 {
-  "checked_at_utc": "2026-11-24T07:24:02.851650+00:00",
+  "checked_at_utc": "2026-11-24T07:26:18.110397+00:00",
   "deterministic_seed": 20261115,
   "diagnostic_scope": {
     "absolute_tolerance": 3e-11,
@@ -13,16 +13,16 @@
     "numerical": "Explicit raw matrix/operator, Born-law, odd-Pauli and joint-POVM checks at the listed small dimensions",
     "sampling_note": "Random matrices use a fixed seed. No end-to-end experiment Monte Carlo is presented; decoded Bernoulli laws are checked directly from explicit Born probabilities."
   },
-  "duration_seconds": 0.788557743999263,
+  "duration_seconds": 0.7032992409986036,
   "input_sha256": {
     "science/README.md": "4bd1f090be5ec58df767a57848516e6adbc091f264223b4e0eac8fc0c803ef9b",
-    "science/attaining_measurements.md": "d34958c0860329d758cc6744f3efa85a5ff8123a5b15d05994b64952b68a46ba",
-    "science/collective_converse.md": "1db3e7365f098306c610158e706b4b70408de5ea9590f9d08ac258f216a0aab8",
+    "science/attaining_measurements.md": "4e314e4a2642a6db744fb0d972a51ff9b3b2200c082467092717aca7f8b168e6",
+    "science/collective_converse.md": "f0752ad88c4b1680671933db268b206b16546da8c3f8a63490a6f1917e547e36",
     "science/model.md": "68797a1e6cd73a94378764a3d285ba3b843a6ba9f1821574f5225e2f454de8fb",
     "science/noisy-markers.md": "5fbbcad5da66f7614fb181d46667d1e408d228896f0b0bbac8560373683e80d6",
     "science/phase_boundary.md": "b716402762a2ae61d7a5bef0310e21a51c65f26e0f4691bfd8717a6eaab84540",
-    "science/resources.md": "d779bd92ca5812424800240ed3a8d647174bacb6ceeebe622ce8129037d4f4db",
-    "science/worked_example.md": "aebe11d0eec37955591f429f089a7251bc68a54fa9f9bf772f2c070e21c6cb2c",
+    "science/resources.md": "0b52de28656cede005284423a648cd487e807f5c12b0acf4627086a5f2c488dd",
+    "science/worked_example.md": "cc62ad96bc249d79f93f575677ede53111f5bde8e503ab78cb0d1ba62b9d0225",
     "verification/check_noisy_markers.py": "ac10b30a2bacf4cd1a77a20de5ff138c84fe83d4c2e076ad657a0d31700f2031",
     "verification/check_science.py": "a70c9e2f2dbff3d0fabc06f25c3f1d6e7ded3123d206c74980245f4ea2fdab8c"
   },
@@ -50,7 +50,7 @@
         "11": 1024,
         "12": 2049
       },
-      "duration_seconds": 0.016066566000517923,
+      "duration_seconds": 0.01252610600022308,
       "method": "Independent binary symplectic enumeration of star-generator products",
       "name": "binary_symplectic_ghz_counts",
       "passed": true
@@ -58,7 +58,7 @@
     {
       "cases": 154,
       "covered_raw_operator_cases": 66,
-      "duration_seconds": 0.07588238499920408,
+      "duration_seconds": 0.08820168400052353,
       "even_all_z_cases": 3,
       "local_clifford_cases": 32,
       "max_absolute_residual": 3.3306690738754696e-15,
@@ -86,7 +86,7 @@
         7
       ],
       "cases": 240,
-      "duration_seconds": 0.030291347999082063,
+      "duration_seconds": 0.03428412900029798,
       "method": "Binomial average of independently enumerated stabilizer counts versus generating-function closed form",
       "n_values": [
         1,
@@ -114,7 +114,7 @@
     },
     {
       "cases": 9,
-      "duration_seconds": 0.0010173329992539948,
+      "duration_seconds": 0.0012890350008092355,
       "method": "Raw tensor Pauli operators in an independently constructed parity/complement basis",
       "name": "odd_tensor_pauli_representation",
       "passed": true,
@@ -207,7 +207,7 @@
           ]
         }
       ],
-      "duration_seconds": 0.011705879000146524,
+      "duration_seconds": 0.013449661999402451,
       "max_response_to_bound_ratio": 0.7002969721690533,
       "method": "Raw subset-Pauli expectations of random complex pure block effects; explicit Bell-state signed known-site reduction",
       "name": "odd_subset_response_and_signed_reduction",
@@ -219,7 +219,7 @@
     },
     {
       "cases": 20,
-      "duration_seconds": 0.09884241200052202,
+      "duration_seconds": 0.17993887699958577,
       "max_block_hilbert_dimension": 64,
       "max_chi_to_bound_ratio": 0.0030741194785684186,
       "method": "Direct tensor density matrices and independently normalized random general joint POVMs; enumerate unresolved axes at finite +/- contrast",
@@ -488,7 +488,7 @@
     },
     {
       "cases": 323,
-      "duration_seconds": 0.540399236999292,
+      "duration_seconds": 0.3573248089996923,
       "groups": {
         "exact_finite_exclusion": {
           "asymmetric_value": "11/62",
