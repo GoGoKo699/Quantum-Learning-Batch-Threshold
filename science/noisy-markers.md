@@ -51,11 +51,11 @@ Write a one-site posterior in decreasing order as $`p_1\ge p_2\ge p_3`$. It is t
 
 ```math
 (p_1-p_2)\delta_1
- +2(p_2-p_3)\operatorname{Unif}\{1,2\}
- +3p_3\operatorname{Unif}\{1,2,3\}.
+ +2(p_2-p_3)\mathrm{Unif}\{1,2\}
+ +3p_3\mathrm{Unif}\{1,2,3\}.
 ```
 
-To bound an odd tensor term in the sign comparison, fix the mixture component at every site and condition further on the actual axis at each singleton or two-candidate site. The remaining $`k`$ sites are uniform over all three axes. For any density operator $`\omega`$ on the block payloads and any odd set $`S`$ of payload copies, the [odd-subset lemma](collective_converse.md#3-odd-tensor-powers-retain-a-pauli-algebra) bounds the uniform average of $`[\operatorname{Tr}(\omega Q_{a,S})]^2`$ by $`(2/3)^k`$. Here $`Q_{a,S}`$ applies the Pauli word on the copies in $`S`$. The fixed axes at the other sites supply the same signed partial trace as in that lemma.
+To bound an odd tensor term in the sign comparison, fix the mixture component at every site and condition further on the actual axis at each singleton or two-candidate site. The remaining $`k`$ sites are uniform over all three axes. For any density operator $`\omega`$ on the block payloads and any odd set $`S`$ of payload copies, the [odd-subset lemma](collective_converse.md#3-odd-tensor-powers-retain-a-pauli-algebra) bounds the uniform average of $`[\mathrm{Tr}(\omega Q_{a,S})]^2`$ by $`(2/3)^k`$. Here $`Q_{a,S}`$ applies the Pauli word on the copies in $`S`$. The fixed axes at the other sites supply the same signed partial trace as in that lemma.
 
 Averaging the mixture independently at each site replaces the factor $`(2/3)^k`$ by $`\prod_i(1-p_{i,3})`$. In particular, the bound applies to the normalized effect of any marker-conditioned joint POVM. The finite-contrast expansion and $`L_2`$ triangle inequality from the [erasure proof](collective_converse.md#4-one-block-at-finite-contrast) give conditional relative entropy at most $`A_s(c_0)\prod_i(1-p_{i,3})`$, averaged over the posterior word. Averaging the markers then gives
 
