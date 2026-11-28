@@ -1,0 +1,18 @@
+{
+  "README.md": [
+    "Run the preplanned contrast estimator"
+  ],
+  "science/noisy-markers.md": [
+    "Measuring with two retained axes at every site"
+  ],
+  "science/attaining_measurements.md": [
+    "Offline filtering and the exact acceptance probability",
+    "A finite sample guarantee"
+  ],
+  "science/resources.md": [
+    "Operations in the attaining block protocol"
+  ],
+  "science/worked_example.md": [
+    "Decode after collecting all specimens"
+  ]
+}
